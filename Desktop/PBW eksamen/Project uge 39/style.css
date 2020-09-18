@@ -1,0 +1,40 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    opacity: 0.7;
+    height: 100vh;    
+    background-image: url("http://s1.picswalls.com/wallpapers/2014/02/08/autumn-wallpapers_063027581_28.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {
+    margin: 200px;  
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+    
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgba(8, 145, 61, 0.959);
+    padding: 16px;
+    text-align: center;
+    color: white;
+    background-color: #05330d;
+  }
