@@ -37,4 +37,13 @@ body {
     text-align: center;
     color: white;
     background-color: #05330d;
+    font-size: 30px;
   }
+
+  /* Style the bard */
+
+.bard {
+  background-color: #05330d;
+  color: white;
+  font-size: 25px;
+}
