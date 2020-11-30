@@ -4,27 +4,44 @@ body {
   background-attachment: fixed;
   background-size: cover;
   font-family: Segoe UI;
+  font-size: 20px;
 }
 
-.contain {
-    width: 100%;
-    height: 100%;
-  }
-  .box {
-    border-radius: 10px;
-    padding: 10px;
-    width: 250px;
-    background-color: #fff;
-    opacity: 0.9;
-  }
+.container {
+  border-radius: 3px;
+  margin: 500 30px;
+}
+
+.box {
+  border-radius: 60px;
+  padding: 80px;
+  background-color: #fff;
+  opacity: 0.9;
+}
+
+img {
+    width: 25em;
+}
+
+select {
+    border-radius: 200px;
+    padding: 40 235px;    
+    box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
+    font-size: 30px;
+}
+
 
 input {
-    border-radius: 20px;
+  border-radius: 200px;
+  padding: 40 120px;  
+  box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
+  font-size: 30px;
 }
 
-  .login {
-      background-color: #25CB55;
-      border-radius: 20px;
-      padding: 10px 30px;
-  }
-  
+.login {
+  background-color: #25cb55;
+  border-radius: 200px;
+  padding: 20px 245px;
+  box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
+  font-size: 40px;
+}
