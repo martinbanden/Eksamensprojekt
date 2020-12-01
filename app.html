@@ -3,17 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMaWoPntPbFyITyMKXcEXuIMKi9JUasbg&callback=initMap">
+    </script>
+    <script type='module' src='modules/functions.js'></script>
     <title>Document</title>
 </head>
 <body>
     <main>
-        <select name="" id="">Start fejlmelding</select>
-        <select name="" id="">
-            <option value="">Elektronik</option>
-            <option value="">Elektronik</option>
-            <option value="">Opfyldning</option>
-            <option value="">Elektrisk</option>
-        </select>
+
+        <div id="startBox">
+                <button id="btnStart">Start fejlmelding</button> 
+                <h1 name="" id="">Mine fejlmeldinger</h1>
+        </div>
+
+        <!-- Lokation bestemmes -->
+        <div id="Lokate">
+            <div id="dinLokation">
+            </div>
+                <h3>My Google Maps Demo</h3>
+            </div>
+                <!--The div element for the map -->
+            <div id="map"></div> 
+        </div>
+                <p>Er lokationen korrekt?</p>
+                <button id="btnMaps">Få koordinater</button>
+        </div>
+
+        <!-- Her starter "Ny fejlmelding" -->
+       <div id="nyFejl">
+                <div>
+                    <h1>Ny fejlmelding</h1>
+                </div>
+                    <h2>Hvor og hvad? </h2>
+                        <p>Dine koordinater:</p>
+                            <input type="text">
+                           <p>Vælg område:</p> 
+                                <select name="" id="">
+                                        <option value="">Telt 4 Bar 2</option>
+                                </select>
+                            <p>Vælg kategori:</p>
+                                <select name="" id="">
+                                        <option value="">Elektronik</option>
+                                </select>
+                            <p>Beskriv fejl:</p>
+                                            <input type="text">     
+                    <button id="btnHvor">Videre</button>                       
+         </div> 
+       
+         <!-- Beskriv problemet-->
+        <div id="beskrivProb">
+            <div>
+                <h1>Ny fejlmelding</h1>
+            </div>
+                <h2>Beskriv problemet </h2>
+                    <p>Beskriv problemet:</p>
+                        <input type="text">
+                       <p>Hvor kritisk er problemet?</p>
+                            <select name="" id="">
+                                <option value="">Meget kritisk</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">Kritisk</option>
+                            </select>
+                            <select name="" id="">
+                                <option value="">Lav kritisk</option>
+                            </select>
+                <button id="btnBeskriv">Videre</button>                           
+        </div>
+        
+        <!-- Dine oplysninger-->
+        <div id="dineOps">
+            <div>
+                <h1>Ny fejlmelding</h1>
+            </div>
+                    <h2>Dine oplysninger</h2>
+                            <p>Dit navn:</p>
+                                <input type="text">
+                            <p>Mobil nr.:</p>
+                                <input type="text">
+                            <p>Forening:</p>
+                            <select placeholder="Vælg forening">
+                                <option value="el">El</option>
+                                <option value="vvs">VVS</option>
+                                <option value="ekstra">Ekstra</option>
+                            </select>
+                <button id="btnOps" onclick="btnOps()">Videre</button>                          
+        </div>
+
+        <!-- Tak, fejlmeldingen er afsendt -->
+        <div id="takAfsendt">
+            <div>
+                <h1>Ny fejlmelding</h1>
+            </div>
+                    <h2>Tak! Din fejlmelding er afsendt.</h2>
+                    <button id="btnTilbage">Tilbage</button>                          
+        </div>
+       
+       
+        
     </main>
 </body>
+<script type='module' src='execution.js'></script>
 </html>
