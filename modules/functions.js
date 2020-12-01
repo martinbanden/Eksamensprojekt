@@ -1,5 +1,5 @@
 'use strict'
-import {$, createCookie, readCookie, eraseCookie, initMap} from "./modules/library";
+import {$, createCookie, readCookie, eraseCookie, initMap} from "http://localhost/webdev/projects/1. semester eksamen/modules/library.js";
 /*http://localhost/webdev/projects/1. semester eksamen angiv stien på jeres egen localhost for at afprøve*/
 
 
@@ -49,11 +49,13 @@ btnOps.addEventListener("click", skift5);
 
 
 
-//---------------Send e-mail
+/*/---------------Send e-mail
 function btnOps() {
     setTimeout(function(){
         window.open("mailto:" + documentById('email').value ? "?subject=" + document.getElementById('subject').value + "&body" + document.getElementById('message').value);
     }, 320);
 }
+*/
+
 
 export {btnTilbage};

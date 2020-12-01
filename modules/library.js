@@ -40,7 +40,7 @@ function eraseCookie(name) {
 
 
 // Initialize and add the map
-function initMap() {
+const initMap = function() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition();
       } else { 
