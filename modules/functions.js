@@ -1,5 +1,6 @@
 'use strict'
-import {$, createCookie, readCookie, eraseCookie, initMap} from "http://localhost/webdev/projects/1. semester eksamen/modules/library.js";
+import {$, createCookie, readCookie, eraseCookie} from "http://localhost/webdev/projects/1. semester eksamen/modules/library.js";
+import {} from "http://localhost/webdev/projects/1. semester eksamen/modules/formMail.js";
 /*http://localhost/webdev/projects/1. semester eksamen angiv stien på jeres egen localhost for at afprøve*/
 
 
@@ -46,16 +47,20 @@ function skift5() {
 
 btnOps.addEventListener("click", skift5);
 
-
-
-
-/*/---------------Send e-mail
-function btnOps() {
-    setTimeout(function(){
-        window.open("mailto:" + documentById('email').value ? "?subject=" + document.getElementById('subject').value + "&body" + document.getElementById('message').value);
-    }, 320);
+// Initialize and add the map
+function initMap() {
+  // The location of Uluru
+  const uluru = { lat: -25.344, lng: 131.036 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 4,
+    center: uluru,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: uluru,
+    map: map,
+  });
 }
-*/
-
 
 export {btnTilbage};

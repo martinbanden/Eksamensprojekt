@@ -39,26 +39,8 @@ function eraseCookie(name) {
 }
 
 
-// Initialize and add the map
-const initMap = function() {
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition();
-      } else { 
-        x.innerHTML = "Geolocation is not supported by this browser.";
-    }
-    const user = { lat: position.coords.latitude, lng: position.coords.longitude };
-    // The map, centered at user
-    const map = new google.maps.Map(document.getElementById("map"), {
-      zoom: 4,
-      center: user,
-    });
-    // The marker, positioned at user
-    const marker = new google.maps.Marker({
-      position: user,
-      map: map,
-    });
-  }
 
 
 
-export {$, createCookie, readCookie, eraseCookie, initMap};
+
+export {$, createCookie, readCookie, eraseCookie};
