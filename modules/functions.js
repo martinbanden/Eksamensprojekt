@@ -10,7 +10,7 @@ let btnMaps = $("btnMaps");
 let btnHvor = $("btnHvor");
 let btnBeskriv = $("btnBeskriv");
 let btnOps = $("btnOps");
-let btnTilbage = $("btnTilbage");
+
 
 function skift1() {
     $("startBox").style.display = "none";

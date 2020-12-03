@@ -1,4 +1,4 @@
-body {
+#index {
   background-image: url("pexels-photo-1587927.jpeg");
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -58,13 +58,65 @@ input {
   border-radius: 200px;
   padding: 25px 8px;
   box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
-  font-size: 20px;
+  font-size: 30px;
+  color : white;
 }
 
-
+.videre:hover {
+  background-color: #1c973f;
+}
 
 #mainWrapper {
   background-color: bisque;
   opacity: 0.8;
   border-radius: 25px;
+}
+
+#btnStart {
+  background-color:#FF2D2D;
+  border-radius: 200px;
+  padding: 20px 24px;
+  box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
+  font-size: 20px;
+  font-weight: 1000;
+  color: white;
+}
+
+#btnMaps {
+  background-color:#25cb55;
+  border-radius: 200px;
+  padding: 20px 24px;
+  box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
+  font-size: 20px;
+  font-weight: 1000;
+  color: white;
+}
+
+#btnTilbage {
+  background-color:#25cb55;
+  border-radius: 200px;
+  padding: 20px 24px;
+  box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
+  font-size: 20px;
+  font-weight: 1000;
+  color: white;
+}
+
+#app {
+  background: linear-gradient(bisque, grey);
+  max-width: 100%;
+  padding: 5%;
+  height: 95vh;
+  
+  
+}
+
+#textWrapper {
+  background-color: whitesmoke;
+  border-radius: 50px;
+  opacity: 0.8;
+  max-width: 100%;
+  text-align: center;
+  height: 95vh;
+  
 }
