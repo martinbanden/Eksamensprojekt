@@ -5,10 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script type='module' src='modules/functions.js'></script>
+
+    <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    
+    <script type='module' src='./modules/functions.js'></script>
     <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMaWoPntPbFyITyMKXcEXuIMKi9JUasbg&callback=initMap">
     </script>
+    <script>// Initialize and add the map
+        function initMap() {
+            // The location of Uluru
+              const uluru = { lat: -25.344, lng: 131.036 };
+            // The map, centered at Uluru
+            const map = new google.maps.Map(document.getElementById("map"), {
+            zoom: 4,
+            center: uluru,
+            });
+            // The marker, positioned at Uluru
+            const marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+            });
+         }
+            </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    
     <title>Document</title>
@@ -51,7 +71,7 @@
                                 </select>
                             <p>Beskriv fejl:</p>
                                             <input type="text">     
-                    <button class="videre" id="btnHvor"><i class="fas fa-arrow-right"></i></button>                       
+                    <button class="videre" id="btnHvor"><i class="icon-arrow-right"></i></button> 
          </div> 
        
          <!-- Beskriv problemet-->
@@ -81,19 +101,12 @@
                 <h1>Ny fejlmelding</h1>
             </div>
                     <h2>Dine oplysninger</h2>
-                    <form id="mailForm"></form>
-                            <p>Dit navn:</p>
-                                <input type="text" id="name">
-                            <p>Mobil nr.:</p>
-                                <input type="phone" id="phone" placeholder="Mobilephone">
-                            <p>Forening:</p>
-                            <select placeholder="Vælg forening" id="forening">
-                                <option value="el">El</option>
-                                <option value="vvs">VVS</option>
-                                <option value="pioner">Pioner</option>
-                            </select>
-                            <div id="errorMess"></div>
-                <button class="videre" id="btnOps"><i class="fas fa-arrow-right"></i></button>                          
+                    <form id="mailForm" action="mail_handler.php" method="POST">
+                           Navn på anmelder:<br> <input type="text" name="name" placeholder="Navn"><br>
+                            Telefonnummer: <br><input name="tlf" placeholder="Mobilnr" type="number"></input>
+                            <input type="submit" name="submit" value="Send">
+                        </form>
+                <button class="videre" id="btnOps"><i class="fas fa-arrow-right"></i></button> 
         </div>
 
         <!-- Tak, fejlmeldingen er afsendt -->
@@ -105,7 +118,6 @@
                     <button id="btnTilbage">Tilbage</button>                          
         </div>
        
-<script src="formMail.js"></script>     
         
     </main>
 </body>
