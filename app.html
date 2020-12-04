@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
@@ -13,22 +13,7 @@
     <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMaWoPntPbFyITyMKXcEXuIMKi9JUasbg&callback=initMap">
     </script>
-    <script>// Initialize and add the map
-        function initMap() {
-            // The location of Uluru
-              const uluru = { lat: -25.344, lng: 131.036 };
-            // The map, centered at Uluru
-            const map = new google.maps.Map(document.getElementById("map"), {
-            zoom: 4,
-            center: uluru,
-            });
-            // The marker, positioned at Uluru
-            const marker = new google.maps.Marker({
-            position: uluru,
-            map: map,
-            });
-         }
-            </script>
+    <script src='./modules/maps.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    
     <title>Document</title>
@@ -48,7 +33,7 @@
             
                 <!--The div element for the map -->
             <div id="map"></div> 
-            
+            <div id="coords"></div>
                 <p>Er lokationen korrekt?</p>
                 <button id="btnMaps">Få koordinater</button>
         </div>

@@ -1,7 +1,6 @@
 'use strict'
 import {$, createCookie, readCookie, eraseCookie} from "http://localhost/webdev/projects/1. semester eksamen/modules/library.js";
-import {} from "http://localhost/webdev/projects/1. semester eksamen/modules/formMail.js";
-/*http://localhost/webdev/projects/1. semester eksamen angiv stien på jeres egen localhost for at afprøve*/
+
 
 
 //----------Start fejlmeldinger
@@ -10,7 +9,7 @@ let btnMaps = $("btnMaps");
 let btnHvor = $("btnHvor");
 let btnBeskriv = $("btnBeskriv");
 let btnOps = $("btnOps");
-
+let btnTilbage = $("btnTilbage");
 
 function skift1() {
     $("startBox").style.display = "none";
@@ -47,20 +46,6 @@ function skift5() {
 
 btnOps.addEventListener("click", skift5);
 
-// Initialize and add the map
-function initMap() {
-  // The location of Uluru
-  const uluru = { lat: -25.344, lng: 131.036 };
-  // The map, centered at Uluru
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: uluru,
-  });
-  // The marker, positioned at Uluru
-  const marker = new google.maps.Marker({
-    position: uluru,
-    map: map,
-  });
-}
+
 
 export {btnTilbage};
