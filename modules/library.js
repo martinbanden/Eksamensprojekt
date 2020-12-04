@@ -42,4 +42,4 @@ function eraseCookie(name) {
 
 
 
-export {$, createCookie, readCookie, eraseCookie, initMap};
+export {$, createCookie, readCookie, eraseCookie};

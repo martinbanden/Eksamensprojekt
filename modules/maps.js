@@ -25,10 +25,11 @@ function getLocation() {
   } else {
     coords.innerHTML = "Geolocation is not supported by this browser.";
   }
+ }
+ 
   function showPosition(position) {
   coords.innerHTML = "Latitude: " + position.coords.latitude +
   "<br>Longitude: " + position.coords.longitude;
   }
-}
 
 getLocation();
