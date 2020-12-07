@@ -1,31 +1,28 @@
 <?php 
+// var_dump($_GET); 
 
-// if (isset($_POST["send"])) {
-//     $to = "khavushka@gmail.com"; //hvor brevet skal sendes
-
-//     $subject = "E-mail fra ...."; //email-emne
-
-//     $charset = "utf-8"; 
-
-//     $headers = "Content-type: text/html; charset=windows-1251 \r\n"; //teknisk overskrift på e-mailen
-//     $headers . = "Date: ".date('D, d M Y h:i:s O')."\r\n";
-
-//     $msg= "Navn: ".$_POST["name"]."\n";$msg .="Besked: ".$_POST["msg"]."\n"; // form teksten i meddelelsen til afsendelse af
-
-//     mail($to, $subject, $msg, $headerss); //samler alle de indtastede data og sender dem til adressatens
-
-//     print "<script>alert(\"Beskeden er sendt\"); window.location=window.location.href</script>";//efter at siden er sendt, opdaterer den og viser en besked om, at afsendelsen er fuldført.
-// }
-
-$name = $_POST['name'];
+$navn = $_POST['navn'];
 $tlf = $_POST['tlf'];
 
-$to = "khavushka@gmail.com";
-$subject = "Text";
-$body = "This is an automated message. " . $tlf   . $name;
+$to = "khavushka@gmail.com"; //hvor brevet skal sendes
+$subject = "Fejlmelding"; //email-emne
+$body = "text "  . $name  ."\t"  . $tlf ; // form af teksten i meddelelsen til afsendelse
 
-mail ($to, $subject, $body);
+// mail ($to, $subject, $body); //samler alle de indtastede data og sender dem til adressatens
 
-echo "Besked ...." . $body;
+echo "Besked ...." . $body . $beskrivelse;
 
+echo $_POST['navn']+$_POST['tlf']+$_POST['tekst']+$_POST['n1']+$_POST['n2']+$_POST['n3'];
+
+// echo htmlspecialchars($_POST['navn']); 
+// echo  '<br>';
+// echo (int)$_POST['tlf'];
+// echo '<br>';
+// echo htmlspecialchars($_POST['tekst']);
+// echo '<br>';
+// echo htmlspecialchars($_POST['n1']);  
+
+
+// echo '<br>';
+// echo htmlspecialchars($_POST['n2']); 
 ?>

@@ -20,90 +20,88 @@
 </head>
 <body id="app">
     <main>
-        <div class="textWrapper">
-        <div id="startBox">
-                <button id="btnStart">Start fejlmelding</button> 
-                <h1 name="" id="">Mine fejlmeldinger</h1>
-        </div>
-
-        <!-- Lokation bestemmes -->
-        <div id="Lokate">
-            <div id="dinLokation"></div>
-                <h3>My Google Maps Demo</h3>
-            
-                <!--The div element for the map -->
-            <div id="map"></div> 
-            <div id="coords"></div>
-                <p>Er lokationen korrekt?</p>
-                <button id="btnMaps">Få koordinater</button>
-        </div>
-
-        <!-- Her starter "Ny fejlmelding" -->
-       <div id="nyFejl">
-                <div>
-                    <h1>Ny fejlmelding</h1>
+        <form id="mailForm" action="mail_handler.php" method="POST">
+                <div class="textWrapper">
+                <div id="startBox">
+                        <button id="btnStart">Start fejlmelding</button> 
+                        <h1 name="" id="">Mine fejlmeldinger</h1>
                 </div>
-                    <h2>Hvor og hvad? </h2>
-                        <p>Dine koordinater:</p>
-                            <input type="text">
-                           <p>Vælg område:</p> 
-                                <select name="" id="">
-                                        <option value="">Telt 4 Bar 2</option>
-                                </select>
-                            <p>Vælg kategori:</p>
-                                <select name="" id="">
-                                        <option value="">Elektronik</option>
-                                </select>
-                            <p>Beskriv fejl:</p>
-                                            <input type="text">     
-                    <button class="videre" id="btnHvor"><i class="icon-arrow-right"></i></button> 
-         </div> 
-       
-         <!-- Beskriv problemet-->
-        <div id="beskrivProb">
-            <div>
-                <h1>Ny fejlmelding</h1>
-            </div>
-                <h2>Beskriv problemet </h2>
-                    <p>Beskriv problemet:</p>
-                        <input type="text">
-                       <p>Hvor kritisk er problemet?</p>
-                            <select name="" id="">
-                                <option value="">Meget kritisk</option>
-                            </select>
-                            <select name="" id="">
-                                <option value="">Kritisk</option>
-                            </select>
-                            <select name="" id="">
-                                <option value="">Lav kritisk</option>
-                            </select>
-                <button class="videre" id="btnBeskriv"><i class="fas fa-arrow-right"></i></button>                           
-        </div>
-        
-        <!-- Dine oplysninger-->
-        <div id="dineOps">
-            <div>
-                <h1>Ny fejlmelding</h1>
-            </div>
-                    <h2>Dine oplysninger</h2>
-                    <form id="mailForm" action="mail_handler.php" method="POST">
-                           Navn på anmelder:<br> <input type="text" name="name" placeholder="Navn"><br>
-                            Telefonnummer: <br><input name="tlf" placeholder="Mobilnr" type="number"></input>
-                            <input type="submit" name="submit" value="Send">
-                        </form>
-                <button class="videre" id="btnOps"><i class="fas fa-arrow-right"></i></button> 
-        </div>
 
-        <!-- Tak, fejlmeldingen er afsendt -->
-        <div id="takAfsendt">
-            <div>
-                <h1>Ny fejlmelding</h1>
-            </div>
-                    <h2>Tak! Din fejlmelding er afsendt.</h2>
-                    <button id="btnTilbage">Tilbage</button>                          
-        </div>
-       
-    </div> <!-- textWrapper afslut-->
+                <!-- Lokation bestemmes -->
+                <div id="Lokate">
+                    <div id="dinLokation"></div>
+                        <h3>My Google Maps Demo</h3>
+                    
+                        <!--The div element for the map -->
+                    <div id="map"></div> 
+                    <div id="coords"></div>
+                        <p>Er lokationen korrekt?</p>
+                        <button id="btnMaps">Få koordinater</button>
+                </div>
+
+                <!-- Her starter "Ny fejlmelding" -->
+            <div id="nyFejl">
+                        <div>
+                            <h1>Ny fejlmelding</h1>
+                        </div>
+                            <h2>Hvor og hvad? </h2>
+                                <p>Dine koordinater:</p>
+                                    <input type="text">
+                                <p>Vælg område:</p> 
+                                        <select name="" id="">
+                                                <option value="">Telt 4 Bar 2</option>
+                                        </select>
+                                    <p>Vælg kategori:</p>
+                                        <select name="" id="">
+                                                <option value="">Elektronik</option>
+                                        </select>
+                                    <p>Vælg fejl:</p>
+                                                    <select name="" id="">
+                                                        <option value="">Øl mangler</option>
+                                                        <option value="">Cola</option>
+                                                        <option value="">Vand</option>
+                                                    </select>     
+                            <button class="videre" id="btnHvor"><i class="icon-arrow-right"></i></button> 
+                </div> 
+            
+                <!-- Beskriv problemet-->
+                <div id="beskrivProb">
+                    <div>
+                        <h1>Ny fejlmelding</h1>
+                    </div>
+                        <h2>Beskriv problemet </h2>
+                            <p>Beskriv problemet:</p>
+                                <p><textarea name="tekst" type="text"></textarea></p>
+                            <p>Hvor kritisk er problemet?</p>
+                                        <button  name="n1" value="">Meget kritisk</button>
+                                        <button name="n2"  value="">Kritisk</button>
+                                        <button name="n3"  value="">Lav kritisk</button>
+                                      <button name="" class="videre" id="btnBeskriv"><i class="fas fa-arrow-right"></i></button> 
+                                                                             
+                </div>
+                
+                <!-- Dine oplysninger-->
+                <div id="dineOps">
+                    <div>
+                        <h1>Ny fejlmelding</h1>
+                    </div>
+                            <h2>Dine oplysninger</h2>                                                      
+                                Navn på anmelder:<br> <input type="text" name="navn" placeholder="Navn"><br>
+                                    Telefonnummer: <br><input name="tlf" placeholder="Mobilnr" type="number"></input>
+                                <button name="submit" class="videre" id="btnOps"><i class="fas fa-arrow-right"></i></button> 
+                          
+                </div>
+
+                <!-- Tak, fejlmeldingen er afsendt -->
+                <div id="takAfsendt">
+                    <div>
+                        <h1>Ny fejlmelding</h1>
+                    </div>
+                            <h2>Tak! Din fejlmelding er afsendt.</h2>
+                            <button id="btnTilbage">Tilbage</button>                          
+                </div>
+            </div> <!-- textWrapper afslut-->
+        </form>     
     </main>
 </body>
 <script type='module' src='execution.js'></script>
