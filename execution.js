@@ -18,7 +18,7 @@ const init = function () {
     $("takAfsendt").style.display = "none";
 
 }
-
+initMap();
 window.addEventListener('load', init); 
 
 btnTilbage.addEventListener("click", init);

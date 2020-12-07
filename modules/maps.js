@@ -4,18 +4,10 @@ const $ = function(foo) {
     return document.getElementById(foo);
 }
 function initMap() {
-    // The location of Uluru
-    const uluru = { lat: -25.344, lng: 131.036 };
-    // The map, centered at Uluru
-    const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 4,
-    center: uluru,
-    });
-    // The marker, positioned at Uluru
-    const marker = new google.maps.Marker({
-    position: uluru,
-    map: map,
-    });
+$('map').src = "https://open.mapquestapi.com/staticmap/v5/map?locations=Tønder,dk&size=600,400@2x&key=KEY"
+
+
+/*http://maps.google.com/staticmap?center=tonder,dk&zoom=13&size=600x300&maptype=roadmap&markers=color:blue%7Clabel:S%7c54.931535,8.864084?key=AIzaSyDMaWoPntPbFyITyMKXcEXuIMKi9JUasbg*/
 }
 
 function getLocation() {
