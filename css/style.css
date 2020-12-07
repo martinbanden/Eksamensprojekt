@@ -20,20 +20,18 @@
 }
 
 img {
-    width: 25em;
+  width: 25em;
 }
 
 select {
-    border-radius: 200px;
-    padding: 40 235px;    
-    box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
-    font-size: 30px;
+  border-radius: 200px;
+  padding: 40 235px;
+  box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
+  font-size: 30px;
 }
-
-
 input {
   border-radius: 200px;
-  padding: 40 120px;  
+  padding: 40 120px;
   box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
   font-size: 30px;
 }
@@ -55,11 +53,11 @@ input {
 
 .videre {
   background-color: #25cb55;
-  border-radius: 200px;
-  padding: 25px 8px;
+  border-radius: 50%;
+  padding: 40px;
   box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
   font-size: 30px;
-  color : white;
+  color: white;
 }
 
 .videre:hover {
@@ -73,7 +71,7 @@ input {
 }
 
 #btnStart {
-  background-color:#FF2D2D;
+  background-color: #ff2d2d;
   border-radius: 200px;
   padding: 20px 24px;
   box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
@@ -83,7 +81,7 @@ input {
 }
 
 #btnMaps {
-  background-color:#25cb55;
+  background-color: #25cb55;
   border-radius: 200px;
   padding: 20px 24px;
   box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
@@ -93,7 +91,7 @@ input {
 }
 
 #btnTilbage {
-  background-color:#25cb55;
+  background-color: #25cb55;
   border-radius: 200px;
   padding: 20px 24px;
   box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
@@ -107,8 +105,6 @@ input {
   max-width: 100%;
   padding: 5%;
   height: 95vh;
-  
-  
 }
 
 #textWrapper {
@@ -118,5 +114,4 @@ input {
   max-width: 100%;
   text-align: center;
   height: 95vh;
-  
 }

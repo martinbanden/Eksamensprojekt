@@ -16,7 +16,7 @@
     <script src='./modules/maps.js'></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    
-    <title>Document</title>
+    <title>Tønder Festival</title>
 </head>
 <body id="app">
     <main>
@@ -32,15 +32,15 @@
                     <div id="dinLokation"></div>
                         <h3>My Google Maps Demo</h3>
                     
-                        <!--The div element for the map -->
-                    <div id="map"></div> 
+                 <!--The div element for the map -->
+                    <div id="map" name=""></div> 
                     <div id="coords"></div>
                         <p>Er lokationen korrekt?</p>
                         <button id="btnMaps">Få koordinater</button>
                 </div>
 
-                <!-- Her starter "Ny fejlmelding" -->
-            <div id="nyFejl">
+                 <!-- Her starter "Ny fejlmelding" -->
+            <div id="nyFejl" name="nyfejl">
                         <div>
                             <h1>Ny fejlmelding</h1>
                         </div>
@@ -64,8 +64,8 @@
                             <button class="videre" id="btnHvor"><i class="icon-arrow-right"></i></button> 
                 </div> 
             
-                <!-- Beskriv problemet-->
-                <div id="beskrivProb">
+                            <!-- Beskriv problemet-->
+                <div id="beskrivProb" name="beskriv">
                     <div>
                         <h1>Ny fejlmelding</h1>
                     </div>
@@ -73,11 +73,10 @@
                             <p>Beskriv problemet:</p>
                                 <p><textarea name="tekst" type="text"></textarea></p>
                             <p>Hvor kritisk er problemet?</p>
-                                        <button  name="n1" value="">Meget kritisk</button>
-                                        <button name="n2"  value="">Kritisk</button>
-                                        <button name="n3"  value="">Lav kritisk</button>
-                                      <button name="" class="videre" id="btnBeskriv"><i class="icon-arrow-right"></i></button> 
-                                                                             
+                                        <button><input name="n1" type="radio" value="Meget kritisk">Meget kritisk</button>
+                                        <button><input name="n2" type="radio" value="Meget kritisk">Kritisk</button>
+                                        <button><input name="n3" type="radio" value="Meget kritisk">Lav kritisk</button>
+                                      <button  class="videre" id="btnBeskriv"><i class="icon-arrow-right"></i></button>                                              
                 </div>
                 
                 <!-- Dine oplysninger-->
@@ -87,9 +86,8 @@
                     </div>
                             <h2>Dine oplysninger</h2>                                                      
                                 Navn på anmelder:<br> <input type="text" name="navn" placeholder="Navn"><br>
-                                    Telefonnummer: <br><input name="tlf" placeholder="Mobilnr" type="number"></input>
-                                <button name="submit" class="videre" id="btnOps"><i class="icon-arrow-right"></i></button> 
-                          
+                                Telefonnummer: <br><input name="tlf" placeholder="Mobilnr" type="number"></input>
+                                <button name="submit" class="videre" id="btnOps"><i class="icon-arrow-right"></i></button>  
                 </div>
 
                 <!-- Tak, fejlmeldingen er afsendt -->
@@ -100,8 +98,11 @@
                             <h2>Tak! Din fejlmelding er afsendt.</h2>
                             <button id="btnTilbage">Tilbage</button>                          
                 </div>
-            </div> <!-- textWrapper afslut-->
-        </form>     
+            </div> 
+
+            <!-- textWrapper afslut-->
+        </form>    
+                
     </main>
 </body>
 <script type='module' src='execution.js'></script>
