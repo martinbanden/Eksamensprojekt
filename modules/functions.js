@@ -3,6 +3,7 @@ import {$, createCookie, readCookie, eraseCookie} from "http://localhost/webdev/
  
 
 let datarr = [];
+let osarr = [];
 
 function pushCoords(getData) {
 let coords = $("coords").value;
@@ -32,12 +33,24 @@ console.log(datarr);
 }
 
 function pushOps3() {
-    
     let navn = $("navn").value;
     let tlf = $("tlf").value;
 datarr.push(navn);
 datarr.push(tlf);
 console.log(datarr);
+}
+
+function pushOS() {
+osarr.push(datarr);
+
+}
+
+function oversigt() {
+for (let i = osarr[i], )
+    let div = createElement("div");
+    div.createAttribute("id");
+    div.setAttribute(i);
+
 }
 
 //----------Start fejlmeldinger
@@ -65,28 +78,33 @@ function skift2() {
 btnMaps.addEventListener("click", skift2);
 
 function skift3() {
+    pushOps1();
     $("nyFejl").style.display = "none";
     $("beskrivProb").style.display = "block";
-    console.log(datarr);
+
 }
 
-btnHvor.addEventListener("click", skift3, pushOps1);
+btnHvor.addEventListener("click", skift3);
 
 function skift4() {
+    pushOps2();
     $("beskrivProb").style.display = "none";
     $("dineOps").style.display = "block";
 
 }
 
-btnBeskriv.addEventListener("click", skift4, pushOps2);
+btnBeskriv.addEventListener("click", skift4);
 
 function skift5() {
+    pushOps3();
+    pushOS();
     $("dineOps").style.display = "none";
     $("takAfsendt").style.display = "block";
-
+    console.log(datarr);
+    console.log(osarr);
 }
 
-btnOps.addEventListener("click", skift5, pushOps3);
+btnOps.addEventListener("click", skift5);
 
 
 
