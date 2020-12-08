@@ -78,6 +78,7 @@ input {
   font-size: 20px;
   font-weight: 1000;
   color: white;
+  margin-top: 15%;
 }
 
 #btnMaps {
@@ -100,6 +101,32 @@ input {
   color: white;
 }
 
+#btnKryds {
+    background-color: #ff2d2d;
+    border-radius: 200px;
+    padding: 10px 12px;
+    box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
+    font-size: 30px;
+    font-weight: 1000;
+    color: white;
+    float: right;
+    margin-top: 2%;
+    margin-right: 2%;
+}
+
+#btnKort {
+  background-color: navy;
+  border-radius: 200px;
+  padding: 10px 12px;
+  box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
+  font-size: 30px;
+  font-weight: 1000;
+  color: white;
+  float: left;
+  margin-top: 2%;
+  margin-left: 2%;
+}
+
 #app {
   background: linear-gradient(bisque, grey);
   max-width: 100%;
@@ -109,9 +136,8 @@ input {
 
 #textWrapper {
   background-color: whitesmoke;
-  border-radius: 50px;
+  border-radius: 35px;
   opacity: 0.8;
   max-width: 100%;
   text-align: center;
-  height: 95vh;
 }
