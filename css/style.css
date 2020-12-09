@@ -122,7 +122,7 @@ input {
 }
 
 #btnKort {
-  background-color: navy;
+  background-color: #2810ff;
   border-radius: 200px;
   padding: 10px 10px;
   box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
@@ -155,7 +155,8 @@ input {
   font-weight: bold;
 }
 
-#coords, p {
+#coords,
+p {
   font-family: Segoe UI;
   font-size: 20px;
   font-weight: bold;
@@ -166,6 +167,8 @@ input {
   padding-bottom: 12vh;
 }
 
-#n1, #n2, #n3 {
+#n1,
+#n2,
+#n3 {
   box-shadow: none;
 }
