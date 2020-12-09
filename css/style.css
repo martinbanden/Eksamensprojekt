@@ -25,13 +25,13 @@ img {
 
 select {
   border-radius: 200px;
-  padding: 40 250px;
+  padding: 40 320px;
   box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
   font-size: 30px;
 }
 input {
   border-radius: 200px;
-  padding: 40 120px;
+  padding: 40 200px;
   box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
   font-size: 30px;
 }

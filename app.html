@@ -17,6 +17,7 @@
 </head>
 <body id="app">
     <main>
+        <form action="mail_handler.php" method="POST" id="myForm">
                 <div id="textWrapper">
                         <button class="Kryds" id="btnKryds"><i class="fa fa-times"></i></button> 
                         <button class="Kort" id="btnKort"><i class="fa fa-map"></i></button>
@@ -40,7 +41,7 @@
                     <div id="map" name=""></div> 
                     <div id="coords" name="coords"></div>
                         <p>Er lokationen korrekt?</p>
-                        <button id="btnMaps">Få koordinater</button>
+                        <button id="btnMaps"></button>Få koordinater</button>
                 </div>
 
                  <!-- Her starter "Ny fejlmelding" -->
@@ -65,7 +66,7 @@
                                                         <option id="error" value="Cola">Cola</option>
                                                         <option id="error" value="Vand">Vand</option>
                                                     </select>     
-                            <button class="videre" id="btnHvor"><i class="icon-arrow-right"></i></button> 
+                            <button class="videre" id="btnHvor"  required><i class="icon-arrow-right"></i></button> 
                 </div> 
             
                             <!-- Beskriv problemet-->
@@ -80,7 +81,7 @@
                                         <button><input name="n1" id="n1" type="radio" value="Meget kritisk">Meget kritisk</button>
                                         <button><input name="n2" id="n2" type="radio" value="Kritisk">Kritisk</button>
                                         <button><input name="n3" id="n3" type="radio" value="Lav kritisk">Lav kritisk</button>
-                                      <button  class="videre" id="btnBeskriv"><i class="icon-arrow-right"></i></button>                                              
+                                      <button  class="videre" id="btnBeskriv"  required><i class="icon-arrow-right"></i></button>                                              
                 </div>
                 
                 <!-- Dine oplysninger-->
@@ -91,7 +92,7 @@
                             <h2>Dine oplysninger</h2>                                                      
                                 Navn på anmelder:<br> <input type="text" id="navn" name="navn" placeholder="Navn"><br>
                                 Telefonnummer: <br><input type="tel" id="tlf" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" name="tlf" placeholder="Mobilnr"></input>
-                                <button name="submit" class="videre" id="btnOps"><p>Indsend <p><i class="icon-arrow-right"></i></button>
+                                <button name="submit" class="videre" id="btnOps"  required><p>Indsend <p><i class="icon-arrow-right"></i></button>
                 </div>
 
                 <!-- Tak, fejlmeldingen er afsendt -->
@@ -105,10 +106,19 @@
             </div> 
 
             <!-- textWrapper afslut-->
-        <form action="mail_handler.php" method="POST">
+    
 
         </form>    
-                
+        <script type="text/javascript">
+            $(document).ready(function () {
+                $("#myForm").submit(function (e) {
+                    $("#btnOps").attr("disabled", true);        
+                    return true;
+                });
+        
+            })
+        </script>
+        
     </main>
 </body>
 <script type='module' src='execution.js'></script>
