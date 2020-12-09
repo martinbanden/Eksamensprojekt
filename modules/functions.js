@@ -47,8 +47,9 @@ function oversigt() {
 let oversigt = $("oversigt");
 for (let i = 0; i < osarr.length; i++) {
     let div = document.createElement("div");
-    div.createAttribute("id");
-    div.setAttribute("os" + i);
+    let id = document.createAttribute("id");
+    
+    id.setAttribute("os");
     oversigt.append(div);
     }
 
