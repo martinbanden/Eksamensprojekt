@@ -44,12 +44,14 @@ console.log(datarr);
 
 
 function oversigt() {
-/*for (let i = 0; i < osarr.length; i++) {
-    let div = createElement("div");
+let oversigt = $("oversigt");
+for (let i = 0; i < osarr.length; i++) {
+    let div = document.createElement("div");
     div.createAttribute("id");
     div.setAttribute("os" + i);
+    oversigt.append(div);
     }
-    */
+
 }
 
 //----------Start fejlmeldinger
