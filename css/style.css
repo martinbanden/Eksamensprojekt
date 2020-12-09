@@ -10,12 +10,13 @@
 .container {
   border-radius: 3px;
   margin: 500 30px;
+  text-align: center;
 }
 
 .box {
   border-radius: 60px;
   padding: 80px;
-  background-color: #fff;
+  background-color: whitesmoke;
   opacity: 0.9;
 }
 
