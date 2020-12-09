@@ -5,7 +5,7 @@ import {$, createCookie, readCookie, eraseCookie} from "http://localhost/webdev/
 let datarr = [];
 let osarr = [];
 
-function pushCoords(getData) {
+function pushCoords() {
 let coords = $("coords").value;
 datarr.push(coords);
 }
@@ -47,10 +47,9 @@ function oversigt() {
 let oversigt = $("oversigt");
 for (let i = 0; i < osarr.length; i++) {
     let div = document.createElement("div");
-    let id = document.createAttribute("id");
+    div.setAttribute("id", "os" + i);
     
-    id.setAttribute("os");
-    oversigt.append(div);
+    oversigt.appendChild(div);
     }
 
 }
