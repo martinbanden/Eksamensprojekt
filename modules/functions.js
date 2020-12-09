@@ -39,17 +39,28 @@ datarr.push(navn);
 datarr.push(tlf);
 osarr.push(datarr);
 console.log(datarr);
+datarr = [];
 }
 
 
 
 function oversigt() {
 let oversigt = $("oversigt");
+let div = document.createElement("div");            /*vi laver et nyt div*/
+div.innerHTML = "";                                 /*for løkken udskriver alt hvad der er i array så for at undgå
+                                                    dobbelt udskrivning nulstiller vi div'et*/
+
 for (let i = 0; i < osarr.length; i++) {
-    let div = document.createElement("div");
-    div.setAttribute("id", "os" + i);
-    
-    oversigt.appendChild(div);
+    div.innerHTML = osarr[i];                       /*udskriver fra array*/
+    div.setAttribute("id", "os" + i);               /*vi sætter et id som bruger i variablen fra løkken så
+                                                    at der er specifikt for hvert div*/
+
+    let att = document.createAttribute("class");    /* Laver en ny attribute*/
+    att.value = "fejl";                             /*class bliver navngivet "fejl"*/
+    div.setAttributeNode(att);                      /*div får tilskrevet class="fejl"*/
+
+    oversigt.appendChild(div);                      /*div bliver sat som child element af div med id'et oversigt*/
+
     }
 
 }
