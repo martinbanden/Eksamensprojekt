@@ -54,11 +54,12 @@ input {
 .videre {
   background-color: #25cb55;
   border-radius: 50%;
-  padding: 40px;
+  padding: 20px;
   box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
   font-size: 30px;
   color: white;
   border: solid #ffffff 5px;
+  margin: 4%;
 }
 
 .videre:hover {
@@ -92,6 +93,7 @@ input {
   font-weight: 1000;
   color: white;
   border: solid #ffffff 5px;
+  margin: 4%;
 }
 
 #btnTilbage {
@@ -103,6 +105,7 @@ input {
   font-weight: 1000;
   color: white;
   border: solid #ffffff 5px;
+  margin: 4%;
 }
 
 #btnKryds {
@@ -145,4 +148,16 @@ input {
   border-radius: 35px;
   max-width: 100%;
   text-align: center;
+}
+
+#coords {
+  font-family: Segoe UI;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#coords, p {
+  font-family: Segoe UI;
+  font-size: 20px;
+  font-weight: bold;
 }
