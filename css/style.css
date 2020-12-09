@@ -165,3 +165,7 @@ input {
   border-radius: 35px;
   padding-bottom: 12vh;
 }
+
+#n1, #n2, #n3 {
+  box-shadow: none;
+}
