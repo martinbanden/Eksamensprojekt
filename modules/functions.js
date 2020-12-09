@@ -37,20 +37,19 @@ function pushOps3() {
     let tlf = $("tlf").value;
 datarr.push(navn);
 datarr.push(tlf);
+osarr.push(datarr);
 console.log(datarr);
 }
 
-function pushOS() {
-osarr.push(datarr);
 
-}
 
 function oversigt() {
-for (let i = osarr[i], )
+/*for (let i = 0; i < osarr.length; i++) {
     let div = createElement("div");
     div.createAttribute("id");
-    div.setAttribute(i);
-
+    div.setAttribute("os" + i);
+    }
+    */
 }
 
 //----------Start fejlmeldinger
@@ -97,7 +96,7 @@ btnBeskriv.addEventListener("click", skift4);
 
 function skift5() {
     pushOps3();
-    pushOS();
+    oversigt();
     $("dineOps").style.display = "none";
     $("takAfsendt").style.display = "block";
     console.log(datarr);
