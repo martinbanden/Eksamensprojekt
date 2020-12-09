@@ -59,7 +59,7 @@ input {
   font-size: 30px;
   color: white;
   border: solid #ffffff 5px;
-  margin: 4%;
+  margin: 4vh;
 }
 
 .videre:hover {
@@ -80,7 +80,6 @@ input {
   font-size: 20px;
   font-weight: 1000;
   color: white;
-  margin-top: 15%;
   border: solid #ffffff 5px;
 }
 
@@ -93,7 +92,7 @@ input {
   font-weight: 1000;
   color: white;
   border: solid #ffffff 5px;
-  margin: 4%;
+  margin: 4vh;
 }
 
 #btnTilbage {
@@ -105,7 +104,7 @@ input {
   font-weight: 1000;
   color: white;
   border: solid #ffffff 5px;
-  margin: 4%;
+  margin: 4vh;
 }
 
 #btnKryds {
@@ -160,4 +159,9 @@ input {
   font-family: Segoe UI;
   font-size: 20px;
   font-weight: bold;
+}
+
+#appHeader {
+  border-radius: 35px;
+  padding-bottom: 12vh;
 }
