@@ -143,7 +143,6 @@ input {
 #textWrapper {
   background-color: whitesmoke;
   border-radius: 35px;
-  opacity: 0.8;
   max-width: 100%;
   text-align: center;
 }
