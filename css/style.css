@@ -116,12 +116,13 @@ input {
   float: right;
   margin-top: 2%;
   margin-right: 2%;
+  border: solid #ffffff 5px;
 }
 
 #btnKort {
   background-color: navy;
   border-radius: 200px;
-  padding: 10px 12px;
+  padding: 10px 10px;
   box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
   font-size: 30px;
   font-weight: 1000;
@@ -129,6 +130,7 @@ input {
   float: left;
   margin-top: 2%;
   margin-left: 2%;
+  border: solid #ffffff 5px;
 }
 
 #app {
