@@ -86,10 +86,16 @@
             <br>
                 <p>Beskriv problemet:</p>
                     <p><textarea name="tekst" type="text" id="tekst"></textarea></p>
+                
                 <p>Hvor kritisk er problemet?</p>
-                            <button><input name="n1" id="n1" type="radio" value="Meget kritisk">Meget kritisk</button>
-                            <button><input name="n1" id="n1" type="radio" value="Kritisk">Kritisk</button>
-                            <button><input name="n1" id="n1" type="radio" value="Lav kritisk">Lav kritisk</button>
+                      <button input name="n1" id="n1" value="Meget kritisk"><i class="fa fa-exclamation-circle fa-2x" style="color:#ff2d2d; vertical-align:middle"></i> Meget kritisk</button> 
+                            <br>
+                            <br>
+                    <button input name="n2" id="n2" value="Kritisk"><i class="fa fa-exclamation-circle fa-2x" style="color:#FFE135; vertical-align:middle"></i> Kritisk</button>
+                            <br>
+                            <br>
+                    <button input name="n3" id="n3" value="Lav kritisk"><i class="fa fa-exclamation-circle fa-2x" style="color:#25cb55; vertical-align:middle"></i> Mindre kritisk</button>
+                            <br>
                             <br>
                           <button  class="videre" id="btnBeskriv"><i class="icon-arrow-right"></i></button>                                              
     </div>
@@ -118,31 +124,6 @@
 
             <!-- textWrapper afslut-->
 
-        
-<!-- 
-            
-            <h2>PHP Form Validation Example</h2>
-            <p><span class="error">* required field</span></p>
-            <form method="post" action="mail_handler.php">  
-              Name: <input type="text" name="name" value=>
-              <span class="error">* <?php echo $nameErr;?></span>
-              <br><br>
-              E-mail:<input type="text" name="email" value="<?php echo $email;?>">
-              <span class="error">* <?php echo $emailErr;?></span>
-              <br><br>
-              Website: <input type="text" name="website" value="<?php echo $website;?>">
-              <span class="error"><?php echo $websiteErr;?></span>
-              <br><br>
-              Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
-              <br><br>
-              Gender:
-              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
-              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
-              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
-              <span class="error">* <?php echo $genderErr;?></span>
-              <br><br>
-              <input type="submit" name="submit" value="Submit">  
-            </form> -->
             
         </form>    
                 
