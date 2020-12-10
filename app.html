@@ -16,7 +16,9 @@
     <title>Tønder Festival</title>
 </head>
 <body id="app">
+    
     <main>
+        <form action="mail_handler.php" method="POST">
         <div id="textWrapper">
             <div id="appHeader">
                 <button class="Kryds" id="btnKryds"><i class="fa fa-times"></i></button> 
@@ -54,7 +56,7 @@
                 <h2>Hvor og hvad? </h2>
                 <br>
                     <p>Dine koordinater:</p>
-                       <input type="text" id="kotekst">
+                       <input type="text" id="kotekst" name="koordinat">
                         <br>
                     <p>Vælg område:</p> 
                             <select id="selectarea" name="area" >
@@ -86,8 +88,8 @@
                     <p><textarea name="tekst" type="text" id="tekst"></textarea></p>
                 <p>Hvor kritisk er problemet?</p>
                             <button><input name="n1" id="n1" type="radio" value="Meget kritisk">Meget kritisk</button>
-                            <button><input name="n2" id="n2" type="radio" value="Kritisk">Kritisk</button>
-                            <button><input name="n3" id="n3" type="radio" value="Lav kritisk">Lav kritisk</button>
+                            <button><input name="n1" id="n1" type="radio" value="Kritisk">Kritisk</button>
+                            <button><input name="n1" id="n1" type="radio" value="Lav kritisk">Lav kritisk</button>
                             <br>
                           <button  class="videre" id="btnBeskriv"><i class="icon-arrow-right"></i></button>                                              
     </div>
@@ -98,8 +100,8 @@
             <h1>Ny fejlmelding</h1>
         </div>
                 <h2>Dine oplysninger</h2>                                                      
-                    Navn på anmelder:<br> <input type="text" id="navn" name="navn" placeholder="Navn"><br>
-                    Telefonnummer: <br><input type="tel" id="tlf" pattern="[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}" name="tlf" placeholder="Mobilnr"></input>
+                    Navn på anmelder:<br> <input type="text" id="navn" name="name" placeholder="Navn"><br>
+                    Telefonnummer: <br><input type="tel" id="tlf" name="tlf" placeholder="Mobilnr"></input>
                    <br>
                     <button name="submit" class="videre" id="btnOps"><p>Indsend <p><i class="icon-arrow-right"></i></button>
     </div>
@@ -115,8 +117,33 @@
 </div> 
 
             <!-- textWrapper afslut-->
-        <form action="mail_handler.php" method="POST"></form>
 
+        
+<!-- 
+            
+            <h2>PHP Form Validation Example</h2>
+            <p><span class="error">* required field</span></p>
+            <form method="post" action="mail_handler.php">  
+              Name: <input type="text" name="name" value=>
+              <span class="error">* <?php echo $nameErr;?></span>
+              <br><br>
+              E-mail:<input type="text" name="email" value="<?php echo $email;?>">
+              <span class="error">* <?php echo $emailErr;?></span>
+              <br><br>
+              Website: <input type="text" name="website" value="<?php echo $website;?>">
+              <span class="error"><?php echo $websiteErr;?></span>
+              <br><br>
+              Comment: <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea>
+              <br><br>
+              Gender:
+              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="female") echo "checked";?> value="female">Female
+              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="male") echo "checked";?> value="male">Male
+              <input type="radio" name="gender" <?php if (isset($gender) && $gender=="other") echo "checked";?> value="other">Other  
+              <span class="error">* <?php echo $genderErr;?></span>
+              <br><br>
+              <input type="submit" name="submit" value="Submit">  
+            </form> -->
+            
         </form>    
                 
     </main>

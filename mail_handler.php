@@ -1,40 +1,69 @@
 <?php 
-// var_dump($_GET); 
 
-$navn = $_POST['navn'];
-$tlf = $_POST['tlf'];
-$tekst = $_POST['tekst'];
-$n1 = $_POST['n1'];
-$n2 = $_POST['n2'];
-$n3 =$_POST['n3'];
+$nameErr = $tlfErr = $tekstErr = $koondinatErr = "";
+$name = $tlf = $tekst = $beskriv = $koondinat = "";
 
-$to = "eksempel@gmail.com"; //hvor brevet skal sendes
-$subject = "Fejlmelding"; //email-emne
-$body =  $tekst; // form af teksten i meddelelsen til afsendelse
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+  
+    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed";
+    }
+  }
+  
+  if (empty($_POST["tlf"])) {
+    $tlfErr = "Phone is required";
+  } else {
+    $tlf = test_input($_POST["tlf"]);
+    // 
+    if (!filter_var($tlf)) {
+      $tlfErr = "Invalid phone format";
+    }
+  }
+   
 
-// mail ($to, $subject, $body); //samler alle de indtastede data og sender dem til adressatens
+  if (empty($_POST["tekst"])) {
+    $tekst = "";
+  } else {
+    $tekst = test_input($_POST["tekst"]);
+  }
 
-echo "Beskeden sendt fra" ."\t" .$navn ."\t" . $body . "\t" . $n1 . "\t" . $n2 . "\t" . $n3;
-echo '<br>';
-echo htmlspecialchars($_POST['tlf']); 
-echo '<br>';
-// echo htmlspecialchars($_POST['n1']); 
-// echo '<br>';
-// echo htmlspecialchars($_POST['n2']); 
-// echo '<br>';
-// echo htmlspecialchars($_POST['n3']); 
+  if (empty($_POST["n1"])) {
+    $n1Err = "... is required";
+  } else {
+    $n1 = test_input($_POST["n1"]);
+  }
 
-// echo $_POST['navn']+$_POST['tlf']+$_POST['tekst']+$_POST['n1']+$_POST['n2']+$_POST['n3'];
-
-// echo htmlspecialchars($_POST['navn']); 
-// echo  '<br>';
-// echo (int)$_POST['tlf'];
-// echo '<br>';
-// echo htmlspecialchars($_POST['tekst']);
-// echo '<br>';
-// echo htmlspecialchars($_POST['n1']);  
+  if (empty($_POST["koordinat"])) {
+    $koordinatErr = "Koordinat is required";
+  } else {
+    $koordinat = test_input($_POST["koordinat"]);
+  }
+}
 
 
-// echo '<br>';
-// echo htmlspecialchars($_POST['n2']); 
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+
+
+echo "<h2>Your Input:</h2>";
+echo $name;
+echo "<br>";
+echo $tlf;
+echo "<br>";
+echo $tekst;
+echo "<br>";
+echo $n1;
+echo "<br>";
+echo $koordinat;
+
+
 ?>
