@@ -89,6 +89,13 @@ for (let i = 0; i < osarr.length; i++) {
  
     att.value = "fejl";                             /*class bliver navngivet "fejl"*/
     div.setAttributeNode(att);
+
+    div.style.fontSize = "15px";                    /* styling på de diver der kommer */
+    div.style.backgroundColor = "white";
+    div.style.borderRadius = "200px";
+    div.style.padding = "10px 12px";
+    div.style.marginTop = "30px";
+    div.style.boxShadow = "0 10px 6px 0 rgba(0, 0, 0, 0.664)";
                                                   /*div får tilskrevet class="fejl"*/
     att1.value = "prio";
     ndiv.setAttributeNode(att1);

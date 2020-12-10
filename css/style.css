@@ -238,6 +238,13 @@ input[type="text"]:focus {
   border: 3px solid #555;
 }
 
+#tekst {
+  border-radius: 100px;
+  padding: 10px 12px;
+  box-shadow: 0 10px 6px 0 rgba(0, 0, 0, 0.664);
+  font-size: 15px;
+}
+
 /**** til 'kritisk' knapperne ****/
 
 #n1, #n2, #n3 {
