@@ -100,7 +100,7 @@ input {
 }
 
 #map {
-  height: 400px;
+  height: 50vh;
   /* The height is 400 pixels */
   width: 100%;
   /* The width is the width of the web page */
@@ -226,4 +226,15 @@ p {
 #n2,
 #n3 {
   box-shadow: none;
+}
+
+#kotekst {
+  border-radius: 200px;
+  padding: 10px 12px;
+  box-shadow: 0 10px 6px 0 rgba(0, 0, 0, 0.664);
+  font-size: 15px;
+}
+
+input[type=text]:focus {
+  border: 3px solid #555;
 }
