@@ -22,7 +22,7 @@
 
 .box p {
   font-size: 35px;
-  color: grey;  
+  color: grey;
   font-family: "Segoe UI", sans-serif;
   font-weight: 400;
 }
@@ -35,34 +35,34 @@ img {
   display: inline-block;
   margin-bottom: 15px;
   width: 100%;
-}    
+}
 
 .select select {
-      font-family: 'Arial';
-      display: inline-block;
-      width: 100%;
-      cursor: pointer;
-      padding: 50px;
-      outline: 0;
-      border: 1px double #000000;
-      border-radius: 100px;
-      background: #ffffff;
-      color: #353333;
-      appearance: none;
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
-      text-align-last: center;
-  }
-      .select select::-ms-expand {
-          display: none;
-      }
-      .select select:hover,
-      .select select:focus {
-          color: #000000;
-          background: #cccccc;
-      }
-   
+  font-family: "Arial";
+  display: inline-block;
+  width: 100%;
+  cursor: pointer;
+  padding: 50px;
+  outline: 0;
+  border: 1px double #000000;
+  border-radius: 100px;
+  background: #ffffff;
+  color: #353333;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
+  text-align-last: center;
+}
+.select select::-ms-expand {
+  display: none;
+}
+.select select:hover,
+.select select:focus {
+  color: #000000;
+  background: #cccccc;
+}
+
 .select_arrow {
   position: absolute;
   top: 19px;
@@ -79,7 +79,6 @@ img {
 .select select:disabled ~ .select_arrow {
   border-top-color: #cccccc;
 }
-
 
 input {
   border-radius: 200px;
@@ -177,7 +176,7 @@ input {
 }
 
 #btnKort {
-  background-color: #2810ff;
+  background-color: #25cb55;
   border-radius: 200px;
   padding: 10px 10px;
   box-shadow: 0 16px 6px 0 rgba(0, 0, 0, 0.664);
@@ -235,6 +234,6 @@ p {
   font-size: 15px;
 }
 
-input[type=text]:focus {
+input[type="text"]:focus {
   border: 3px solid #555;
 }
