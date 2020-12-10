@@ -22,13 +22,7 @@ console.log(datarr);
 
 function pushOps2() {
 let text = $("tekst").value;
-    let n1 = $("n1").value;
-    let n2 = $("n2").value;
-    let n3 = $("n3").value;
 datarr.push(text);
-datarr.push(n1);
-datarr.push(n2);
-datarr.push(n3);
 console.log(datarr);
 }
 
@@ -42,11 +36,46 @@ console.log(datarr);
 datarr = [];
 }
 
+    let n1 = $("n1");
+    let n2 = $("n2");
+    let n3 = $("n3");
+
+function lkritisk() {
+    n1.style.opacity = "1.0";
+    n2.style.opacity = ".5";
+    n3.style.opacity = ".5";
+    datarr.push("Mindre kritisk");
+
+}
+
+n1.addEventListener("click", lkritisk);
+
+
+function kritisk() {
+    n2.style.opacity = "1.0";
+    n3.style.opacity = ".5";
+    n1.style.opacity = ".5";
+    datarr.push("Kritisk");
+    
+}
+
+n2.addEventListener("click", kritisk);
+
+
+function mkritisk() {
+    n3.style.opacity = "1.0";
+    n1.style.opacity = ".5"; 
+    n2.style.opacity = ".5";
+    datarr.push("Meget Kritisk");
+}
+
+n3.addEventListener("click", mkritisk);
 
 
 function oversigt() {
 let oversigt = $("oversigt");
-let div = document.createElement("div");            /*vi laver et nyt div*/
+let div = document.createElement("div");
+let ndiv = document.createElement("div");             /*vi laver et nyt div*/
 div.innerHTML = "";                                 /*for løkken udskriver alt hvad der er i array så for at undgå
                                                     dobbelt udskrivning nulstiller vi div'et*/
 
@@ -56,11 +85,16 @@ for (let i = 0; i < osarr.length; i++) {
                                                     at der er specifikt for hvert div*/
 
     let att = document.createAttribute("class");    /* Laver en ny attribute*/
+    let att1 = document.createAttribute("class");
+ 
     att.value = "fejl";                             /*class bliver navngivet "fejl"*/
-    div.setAttributeNode(att);                      /*div får tilskrevet class="fejl"*/
-
+    div.setAttributeNode(att);
+                                                  /*div får tilskrevet class="fejl"*/
+    att1.value = "prio";
+    ndiv.setAttributeNode(att1);
+    
     oversigt.appendChild(div);                      /*div bliver sat som child element af div med id'et oversigt*/
-
+    div.appendChild(ndiv);
     }
 
 }
