@@ -5,10 +5,43 @@ import {$, createCookie, readCookie, eraseCookie} from "http://localhost/webdev/
 let datarr = [];
 let osarr = [];
 
-function pushCoords() {
-let coords = $("coords").value;
-datarr.push(coords);
+let lat;
+let lng;
+let timestamp;
+let coords = $("koordinat");
+
+let map = $('map');
+
+let realwidth = map.clientWidth;
+let realheight = map.clientWidth;
+
+function getLocation() {
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(initMap);
+  } else {
+    coords.innerHTML = "Geolocation is not supported by this browser.";
+  }
+ }
+
+getLocation();
+
+function initMap(position) {
+  lat = position.coords.latitude;
+  lng = position.coords.longitude;
+  timestamp = position.timestamp;
+let map = $("map");
+let staticmap = document.createElement("IMG");
+staticmap.src = "https://www.mapquestapi.com/staticmap/v5/map?key=3ZDz50uvowZWQbX1k3NprLeq47XcdtCl&locations="+ lat +","+ lng +"&center="+ lat +","+ lng +"&size="+ realwidth +","+ realheight +"&zoom=18&type=map&@2x";
+map.appendChild(staticmap);
+
 }
+
+/*function sendCoords() {
+    coords.value = lat; 
+
+}
+*/
 
 function pushOps1() {
     let area = $("area").value;
@@ -101,6 +134,7 @@ function lkritisk() {
 n3.addEventListener("click", lkritisk);
 
 
+
 function oversigt() {
 let oversigt = $("oversigt");
 let div = document.createElement("div");
@@ -160,6 +194,7 @@ function skift2() {
 btnMaps.addEventListener("click", skift2);
 
 function skift3() {
+    /*sendCoords();*/
     pushOps1();
     $("nyFejl").style.display = "none";
     $("beskrivProb").style.display = "block";
@@ -187,6 +222,8 @@ function skift5() {
 }
 
 btnOps.addEventListener("click", skift5);
+
+
 
 
 
