@@ -25,7 +25,7 @@
                 <button class="Kort" id="btnKort"><i class="fa fa-sign-out" aria-hidden="true"></i></button> 
             </div>
     <div id="startBox">
-            <input type="button" id="btnStart">Start fejlmelding</input> 
+            <button type="button" id="btnStart">Start fejlmelding</button> 
             <br>
             <br>
             <h1 name="" id="">Mine fejlmeldinger</h1>
@@ -44,7 +44,7 @@
         <br>
             <p>Er lokationen korrekt?</p>
         <br>
-            <input type="button" id="btnMaps">Få koordinater</input>
+            <button type="button" id="btnMaps">Få koordinater</button>
     </div>
     <br>
 
@@ -74,7 +74,7 @@
                                             <option id="error" value="Vand">Vand</option>
                                         </select>   
                                         <br>  
-                <input type="button" class="videre" id="btnHvor"><i class="icon-arrow-right"></i></input> 
+                <button type="button" class="videre" id="btnHvor"><i class="icon-arrow-right"></i></button> 
     </div> 
 
                 <!-- Beskriv problemet-->
@@ -88,16 +88,16 @@
                     <p><textarea name="tekst" type="text" id="tekst"></textarea></p>
                 
                 <p>Hvor kritisk er problemet?</p>
-                      <input type="radio" name="n1" id="n1" value="Meget kritisk"><i class="fa fa-exclamation-circle fa-2x" style="color:#ff2d2d; vertical-align:middle"></i> Meget kritisk</input> 
+                      <button type="button" id="n1" ><i class="fa fa-exclamation-circle fa-2x" style="color:#ff2d2d; vertical-align:middle"></i><input value="Meget kritisk" type="text" id="n1s" style="display:none;">Meget kritisk</input></button> 
                             <br>
                             <br>
-                    <input type="radio" name="n1" id="n2" value="Kritisk"><i class="fa fa-exclamation-circle fa-2x" style="color:#FFE135; vertical-align:middle"></i> Kritisk</input>
+                    <button type="button" id="n2" ><i class="fa fa-exclamation-circle fa-2x" style="color:#FFE135; vertical-align:middle"></i><input value="Kritisk" type="text" id="n2s" style="display:none;">Kritisk</input></button>
                             <br>
                             <br>
-                    <input type="radio" name="n1" id="n3" value="Lav kritisk"><i class="fa fa-exclamation-circle fa-2x" style="color:#25cb55; vertical-align:middle"></i> Mindre kritisk</input>
+                    <button type="button" id="n3" ><i class="fa fa-exclamation-circle fa-2x" style="color:#25cb55; vertical-align:middle"></i><input value="Lav kritisk" type="text" id="n3s" style="display:none;">Mindre kritisk</input></button>
                             <br>
                             <br>
-                          <input type="button"  class="videre" id="btnBeskriv"><i class="icon-arrow-right"></i></input>                                              
+                          <button type="button"  class="videre" id="btnBeskriv"><i class="icon-arrow-right"></i></button>                                              
     </div>
     
     <!-- Dine oplysninger-->
@@ -110,7 +110,7 @@
                 <p> Navn på anmelder:</p> <input type="text" id="navn" name="name" placeholder="Navn"><br>
                 <p> Telefonnummer:</p> <input type="tel" id="tlf" name="tlf" placeholder="Mobilnr"></input>
                 <br>
-                    <button name="submit" class="videre" id="btnOps"><p>Indsend <p><i class="icon-arrow-right"></i></button>
+                    <button type="submit" name="submit" class="videre" id="btnOps"><p>Indsend <p><i class="icon-arrow-right"></i></button>
     </div>
 
     <!-- Tak, fejlmeldingen er afsendt -->
@@ -119,7 +119,7 @@
             <h1>Ny fejlmelding</h1>
         </div>
                 <h2>Tak! Din fejlmelding er afsendt.</h2>
-                <input type="button" id="btnTilbage">Tilbage</input>                          
+                <button type="button" id="btnTilbage">Tilbage</button>                          
     </div>
 </div> 
 

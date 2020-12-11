@@ -37,12 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $n1 = test_input($_POST["n1"]);
   }
 
-  if (empty($_POST["koordinat"])) {
-    $koordinatErr = "Koordinat is required";
-  } else {
-    $koordinat = test_input($_POST["koordinat"]);
-  }
-}
+
 
 
 function test_input($data) {

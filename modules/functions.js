@@ -40,36 +40,65 @@ datarr = [];
     let n2 = $("n2");
     let n3 = $("n3");
 
-function lkritisk() {
+    let input1 = $("n1s");
+    let input2 = $("n2s");
+    let input3 = $("n3s");
+
+    let nname = document.createAttribute("name");
+    nname.value = "n1";
+
+
+function mkritisk() {
     n1.style.opacity = "1.0";
     n2.style.opacity = ".5";
     n3.style.opacity = ".5";
-    datarr.push("Mindre kritisk");
-
+    let niveau = "Meget Kritisk";
+    datarr.push(niveau);
+    
+    /*n2.removeAttributeNode(nname); */
+    /*n3.removeAttributeNode(nname); */
+    input1.setAttributeNode(nname);
+    n1.appendChild(input1);
+    
+    
 }
 
-n1.addEventListener("click", lkritisk);
+n1.addEventListener("click", mkritisk);
 
 
 function kritisk() {
     n2.style.opacity = "1.0";
     n3.style.opacity = ".5";
     n1.style.opacity = ".5";
-    datarr.push("Kritisk");
+    let niveau = "Kritisk";
+    datarr.push(niveau);
+
+    /*n1.removeAttributeNode(nname); */
+    /*n3.removeAttributeNode(nname);*/
+    input2.setAttributeNode(nname);
+    n2.appendChild(input); 
     
+
 }
 
 n2.addEventListener("click", kritisk);
 
 
-function mkritisk() {
+function lkritisk() {
     n3.style.opacity = "1.0";
     n1.style.opacity = ".5"; 
     n2.style.opacity = ".5";
-    datarr.push("Meget Kritisk");
+    let niveau = "Mindre Kritisk";
+    datarr.push(niveau);
+
+    /*n1.removeAttributeNode(nname); */
+    /*n2.removeAttributeNode(nname);*/
+    input3.setAttributeNode(nname);
+    n3.appendChild(input); 
+    
 }
 
-n3.addEventListener("click", mkritisk);
+n3.addEventListener("click", lkritisk);
 
 
 function oversigt() {
