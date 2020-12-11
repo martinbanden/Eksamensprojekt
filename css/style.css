@@ -221,12 +221,6 @@ p {
   padding-bottom: 12vh;
 }
 
-#n1,
-#n2,
-#n3 {
-  box-shadow: none;
-}
-
 #kotekst {
   border-radius: 200px;
   padding: 10px 12px;
