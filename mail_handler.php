@@ -71,5 +71,5 @@ echo "<br>";
 echo $beskriv;
 
 // $to = "eksempel@gmail.com"; //hvor brevet skal sendes
-
+// mail($to , $navn, $tlf)
 ?>
