@@ -1,7 +1,7 @@
 <?php 
 
-$nameErr = $tlfErr = $tekstErr = $koondinatErr = "";
-$name = $tlf = $tekst = $beskriv = $koondinat = "";
+$nameErr = $tlfErr = $tekstErr = $n1Err = $koondinatErr = "";
+$name = $tlf = $tekst = $beskriv = $n1 = $koondinat = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
@@ -37,7 +37,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $n1 = test_input($_POST["n1"]);
   }
 
-
+  if (empty($_POST["koordinat"])) {
+    $koordinatErr = "Koordinat is required";
+  } else {
+    $koordinat = test_input($_POST["koordinat"]);
+  }
+}
 
 
 function test_input($data) {
