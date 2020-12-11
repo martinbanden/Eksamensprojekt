@@ -1,6 +1,6 @@
 <?php 
 
-$nameErr = $tlfErr = $tekstErr = $n1Err = $koondinatErr = "";
+$nameErr = $tlfErr = $tekstErr = $beskrivErr = $n1Err = $koondinatErr = "";
 $name = $tlf = $tekst = $beskriv = $n1 = $koondinat = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -8,10 +8,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nameErr = "Name is required";
   } else {
     $name = test_input($_POST["name"]);
-  
-    if (!preg_match("/^[a-zA-Z-' ]*$/",$name)) {
-      $nameErr = "Only letters and white space allowed";
-    }
   }
   
   if (empty($_POST["tlf"])) {
@@ -26,10 +22,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
 
   if (empty($_POST["tekst"])) {
-    $tekst = "";
+    $tekstErr = "";
   } else {
     $tekst = test_input($_POST["tekst"]);
   }
+
+  if (empty($_POST["beskriv"])) {
+    $beskrivErr = "";
+  } else {
+    $beskriv = test_input($_POST["beskriv"]);
+  }
+
 
   if (empty($_POST["n1"])) {
     $n1Err = "... is required";
@@ -64,6 +67,9 @@ echo "<br>";
 echo $n1;
 echo "<br>";
 echo $koordinat;
+echo "<br>";
+echo $beskriv;
 
+// $to = "eksempel@gmail.com"; //hvor brevet skal sendes
 
 ?>
