@@ -2,8 +2,8 @@
 import {$, createCookie, readCookie, eraseCookie} from "http://localhost/webdev/projects/1. semester eksamen/modules/library.js";
  
 
-let datarr = [];
-let osarr = [];
+let datarr = [];    
+let osarr = [];     
 
 let lat;
 let lng;
