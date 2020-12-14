@@ -8,7 +8,7 @@ let osarr = [];
 let lat;
 let lng;
 let timestamp;
-let coords = $("koordinat");
+let coords = $("kotekst");
 
 let map = $('map');
 
@@ -38,9 +38,10 @@ map.appendChild(staticmap);
 }
 
 function sendCoords() {
+
 let coordSet = `${lat} , ${lng}`;
 coords.value = coordSet;
-console.log(coordSet)
+datarr.push(coordSet);
 }
 
 
