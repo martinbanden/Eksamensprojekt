@@ -7,7 +7,7 @@ let osarr = [];
 
 let lat;
 let lng;
-let timestamp;
+let date;
 let coords = $("kotekst");
 
 let map = $('map');
@@ -27,21 +27,24 @@ function getLocation() {
 getLocation();
 
 function initMap(position) {
+
   lat = position.coords.latitude;
   lng = position.coords.longitude;
-  timestamp = position.timestamp;
+  let domTimestamp = position.timestamp;
+  date = new Date(domTimestamp);
+
 let map = $("map");
 let staticmap = document.createElement("IMG");
 staticmap.src = "https://www.mapquestapi.com/staticmap/v5/map?key=3ZDz50uvowZWQbX1k3NprLeq47XcdtCl&locations="+ lat +","+ lng +"&center="+ lat +","+ lng +"&size="+ realwidth +","+ realheight +"&zoom=18&type=map&@2x";
 map.appendChild(staticmap);
-
 }
 
 function sendCoords() {
 
 let coordSet = `${lat} , ${lng}`; /*koordinaterne bliver sendt videre som en string*/
 coords.value = coordSet;            
-datarr.push(coordSet);             
+datarr.push(coordSet);
+datarr.push(date);             
 }
 
 
@@ -140,8 +143,9 @@ n3.addEventListener("click", lkritisk);
 function oversigt() {
 let oversigt = $("oversigt");
 let div = document.createElement("div");
-let ndiv = document.createElement("div");             /*vi laver et nyt div*/
+let ndiv = document.createElement("div");             
 let p = document.createElement("p");
+
 div.innerHTML = "";                                 /*for løkken udskriver alt hvad der er i array så for at undgå
                                                     dobbelt udskrivning nulstiller vi div'et*/
 
@@ -161,7 +165,7 @@ for (let i = 0; i < osarr.length; i++) {
     ndiv.style.display = "inline-block";
 
     div.appendChild(p);
-    p.innerHTML = flatArr[1] + "<br>" + flatArr[2] + "<br>" + flatArr[3]; /*udskriver fra array*/ 
+    p.innerHTML = flatArr[2] + "<br>" + flatArr[3] + "<br>" + flatArr[4]; /*udskriver fra array*/ 
     p.style.width = "auto";                        /*styling på p*/
     p.style.display = "inline-block";
     p.style.textAlign = "left";
@@ -212,7 +216,6 @@ let btnTilbage = $("btnTilbage");
 function skift1() {
     $("startBox").style.display = "none";
     $("Lokate").style.display = "block";
-    initMap();
     
 }
 
