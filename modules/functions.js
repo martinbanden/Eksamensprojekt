@@ -229,32 +229,55 @@ function skift2() {
 
 btnMaps.addEventListener("click", skift2);
 
-function skift3() {
+function skift3() {                   // her skal laves validering af formular
     /*sendCoords();*/
-    pushOps1();
-    $("nyFejl").style.display = "none";
-    $("beskrivProb").style.display = "block";
-
+    let emptko = $("kotekst").value;
+    if (emptko === "") {
+        alert("Du mangler at udfylde dine koordinater");
+        return false;
+    } else {
+        pushOps1();
+        $("nyFejl").style.display = "none";
+        $("beskrivProb").style.display = "block";
+        return true;
+    }
 }
 
 btnHvor.addEventListener("click", skift3);
 
 function skift4() {
-    pushOps2();
-    $("beskrivProb").style.display = "none";
-    $("dineOps").style.display = "block";
-
+    let empttekst = $("tekst").value;
+    if (empttekst === "") {
+        alert("Du mangler at beskrive problemet");
+        return false;
+    } else {
+        pushOps2();
+        $("beskrivProb").style.display = "none";
+        $("dineOps").style.display = "block";
+        return true;
+    }
 }
 
 btnBeskriv.addEventListener("click", skift4);
 
 function skift5() {
-    pushOps3();
-    oversigt();
-    $("dineOps").style.display = "none";
-    $("takAfsendt").style.display = "block";
-    console.log(datarr);
-    console.log(osarr);
+    let emptnavn = $("navn").value;
+    let empttlf = $("tlf").value;
+    if (emptnavn === "") {
+        alert("Du mangler at udfylde dit navn");
+        return false;
+    } else if (empttlf === "") {
+        alert("Du mangler at udfylde dit telefonnummer");
+        return false;
+    } else {
+        pushOps3();
+        oversigt();
+        $("dineOps").style.display = "none";
+        $("takAfsendt").style.display = "block";
+        console.log(datarr);
+        console.log(osarr);
+        return true;
+    }
 }
 
 btnOps.addEventListener("click", skift5);
