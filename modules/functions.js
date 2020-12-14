@@ -37,11 +37,12 @@ map.appendChild(staticmap);
 
 }
 
-/*function sendCoords() {
-    coords.value = lat; 
-
+function sendCoords() {
+let coordSet = `${lat} , ${lng}`;
+coords.value = coordSet;
+console.log(coordSet)
 }
-*/
+
 
 function pushOps1() {
     let area = $("area").value;
@@ -180,6 +181,7 @@ let btnTilbage = $("btnTilbage");
 function skift1() {
     $("startBox").style.display = "none";
     $("Lokate").style.display = "block";
+    initMap();
     
 }
 
@@ -188,7 +190,7 @@ btnStart.addEventListener("click", skift1);
 function skift2() {
     $("Lokate").style.display = "none";
     $("nyFejl").style.display = "block";
-
+    sendCoords();
 }
 
 btnMaps.addEventListener("click", skift2);
