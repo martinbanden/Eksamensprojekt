@@ -288,5 +288,5 @@ btnOps.addEventListener("click", skift5);
 
 export {btnTilbage};
 
-
+//Cookies
 createCookie(username, counter, 10000000);
