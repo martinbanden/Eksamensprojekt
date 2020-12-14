@@ -7,7 +7,7 @@ let osarr = [];
 
 let lat;
 let lng;
-let timestamp;
+let date;
 let coords = $("kotekst");
 
 let map = $('map');
@@ -27,21 +27,24 @@ function getLocation() {
 getLocation();
 
 function initMap(position) {
+
   lat = position.coords.latitude;
   lng = position.coords.longitude;
-  timestamp = position.timestamp;
+  let domTimestamp = position.timestamp;
+  date = new Date(domTimestamp);
+
 let map = $("map");
 let staticmap = document.createElement("IMG");
 staticmap.src = "https://www.mapquestapi.com/staticmap/v5/map?key=3ZDz50uvowZWQbX1k3NprLeq47XcdtCl&locations="+ lat +","+ lng +"&center="+ lat +","+ lng +"&size="+ realwidth +","+ realheight +"&zoom=18&type=map&@2x";
 map.appendChild(staticmap);
-
 }
 
 function sendCoords() {
 
-let coordSet = `${lat} , ${lng}`;
-coords.value = coordSet;
+let coordSet = `${lat} , ${lng}`; /*koordinaterne bliver sendt videre som en string*/
+coords.value = coordSet;            
 datarr.push(coordSet);
+datarr.push(date);             
 }
 
 
@@ -87,7 +90,7 @@ function mkritisk() {
     n1.style.opacity = "1.0";
     n2.style.opacity = ".5";
     n3.style.opacity = ".5";
-    let niveau = "Meget Kritisk";
+    let niveau = 1;
     datarr.push(niveau);
     
     /*n2.removeAttributeNode(nname); */
@@ -105,7 +108,7 @@ function kritisk() {
     n2.style.opacity = "1.0";
     n3.style.opacity = ".5";
     n1.style.opacity = ".5";
-    let niveau = "Kritisk";
+    let niveau = 2;
     datarr.push(niveau);
 
     /*n1.removeAttributeNode(nname); */
@@ -123,7 +126,7 @@ function lkritisk() {
     n3.style.opacity = "1.0";
     n1.style.opacity = ".5"; 
     n2.style.opacity = ".5";
-    let niveau = "Mindre Kritisk";
+    let niveau = 3;
     datarr.push(niveau);
 
     /*n1.removeAttributeNode(nname); */
@@ -140,33 +143,64 @@ n3.addEventListener("click", lkritisk);
 function oversigt() {
 let oversigt = $("oversigt");
 let div = document.createElement("div");
-let ndiv = document.createElement("div");             /*vi laver et nyt div*/
+let ndiv = document.createElement("div");             
+let p = document.createElement("p");
+
 div.innerHTML = "";                                 /*for løkken udskriver alt hvad der er i array så for at undgå
                                                     dobbelt udskrivning nulstiller vi div'et*/
 
 for (let i = 0; i < osarr.length; i++) {
-    div.innerHTML = osarr[i];                       /*udskriver fra array*/
-    div.setAttribute("id", "os" + i);               /*vi sætter et id som bruger i variablen fra løkken så
-                                                    at der er specifikt for hvert div*/
+    let flatArr = osarr[i];
 
+          
+    div.setAttribute("id", "os" + i);               /*vi sætter et id som bruger i variablen fra løkken så
+                                                    at der er specifikt for hvert div*/                         
     let att = document.createAttribute("class");    /* Laver en ny attribute*/
     let att1 = document.createAttribute("class");
- 
+    
+    div.appendChild(ndiv); 
+    ndiv.style.borderRadius = "200px"; 
+    ndiv.style.width = "60px";
+    ndiv.style.height = "60px";
+    ndiv.style.display = "inline-block";
+
+    div.appendChild(p);
+    p.innerHTML = flatArr[2] + "<br>" + flatArr[3] + "<br>" + flatArr[4]; /*udskriver fra array*/ 
+    p.style.width = "auto";                        /*styling på p*/
+    p.style.display = "inline-block";
+    p.style.textAlign = "left";
+    p.style.marginLeft = "10px";
+    p.style.lineHeight = "25px";
+    p.style.fontSize = "15px";
+
     att.value = "fejl";                             /*class bliver navngivet "fejl"*/
     div.setAttributeNode(att);
-
-    div.style.fontSize = "15px";                    /* styling på de diver der kommer */
-    div.style.backgroundColor = "white";
+                  
+    div.style.backgroundColor = "white";  /* styling på de diver der kommer */
     div.style.borderRadius = "200px";
     div.style.padding = "10px 12px";
     div.style.marginTop = "30px";
+    div.style.marginLeft = "10px";
+    div.style.marginRight = "10px";
     div.style.boxShadow = "0 10px 6px 0 rgba(0, 0, 0, 0.664)";
                                                   /*div får tilskrevet class="fejl"*/
+
     att1.value = "prio";
     ndiv.setAttributeNode(att1);
     
     oversigt.appendChild(div);                      /*div bliver sat som child element af div med id'et oversigt*/
-    div.appendChild(ndiv);
+
+
+        if (flatArr[4] === 1) {
+            ndiv.style.backgroundColor ="#ff2d2d";
+            
+        } else if (flatArr[4] === 2){
+            ndiv.style.backgroundColor = "#FFE135";
+        } else {
+            ndiv.style.backgroundColor ="#25cb55";
+        }
+
+    flatArr = [];
     }
 
 }
@@ -182,7 +216,6 @@ let btnTilbage = $("btnTilbage");
 function skift1() {
     $("startBox").style.display = "none";
     $("Lokate").style.display = "block";
-    initMap();
     
 }
 
@@ -196,32 +229,55 @@ function skift2() {
 
 btnMaps.addEventListener("click", skift2);
 
-function skift3() {
+function skift3() {                   // her skal laves validering af formular
     /*sendCoords();*/
-    pushOps1();
-    $("nyFejl").style.display = "none";
-    $("beskrivProb").style.display = "block";
-
+    let emptko = $("kotekst").value;
+    if (emptko === "") {
+        alert("Du mangler at udfylde dine koordinater");
+        return false;
+    } else {
+        pushOps1();
+        $("nyFejl").style.display = "none";
+        $("beskrivProb").style.display = "block";
+        return true;
+    }
 }
 
 btnHvor.addEventListener("click", skift3);
 
 function skift4() {
-    pushOps2();
-    $("beskrivProb").style.display = "none";
-    $("dineOps").style.display = "block";
-
+    let empttekst = $("tekst").value;
+    if (empttekst === "") {
+        alert("Du mangler at beskrive problemet");
+        return false;
+    } else {
+        pushOps2();
+        $("beskrivProb").style.display = "none";
+        $("dineOps").style.display = "block";
+        return true;
+    }
 }
 
 btnBeskriv.addEventListener("click", skift4);
 
 function skift5() {
-    pushOps3();
-    oversigt();
-    $("dineOps").style.display = "none";
-    $("takAfsendt").style.display = "block";
-    console.log(datarr);
-    console.log(osarr);
+    let emptnavn = $("navn").value;
+    let empttlf = $("tlf").value;
+    if (emptnavn === "") {
+        alert("Du mangler at udfylde dit navn");
+        return false;
+    } else if (empttlf === "") {
+        alert("Du mangler at udfylde dit telefonnummer");
+        return false;
+    } else {
+        pushOps3();
+        oversigt();
+        $("dineOps").style.display = "none";
+        $("takAfsendt").style.display = "block";
+        console.log(datarr);
+        console.log(osarr);
+        return true;
+    }
 }
 
 btnOps.addEventListener("click", skift5);
