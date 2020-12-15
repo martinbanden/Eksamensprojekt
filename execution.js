@@ -16,7 +16,6 @@ const init = function () {
     $("Lokate").style.display = "none";
 
     $("takAfsendt").style.display = "none";
-
 }
 
 window.addEventListener('load', init); 

@@ -2,8 +2,18 @@
 import {$, createCookie, readCookie, eraseCookie} from "http://localhost/webdev/projects/1. semester eksamen/modules/library.js";
  
 
+
+
+
 let datarr = [];    
-let osarr = [];     
+let osarr = [];
+
+/*if (fejlmelding > 0 ) {
+readCookie(fejlmelding);
+let obj = JSON.parse(fejlmelding);
+osarr = obj;
+}     
+*/
 
 let lat;
 let lng;
@@ -14,6 +24,7 @@ let map = $('map');
 
 let realwidth = map.clientWidth;
 let realheight = map.clientWidth;
+let json_str;
 
 function getLocation() {
 
@@ -70,6 +81,7 @@ function pushOps3() {
 datarr.push(navn);
 datarr.push(tlf);
 osarr.push(datarr);
+json_str = JSON.stringify(osarr);
 console.log(datarr);
 datarr = [];
 }
@@ -109,7 +121,7 @@ function kritisk() {
     n3.style.opacity = ".5";
     n1.style.opacity = ".5";
     let niveau = 2;
-    datarr.push(niveau);
+    
 
     /*n1.removeAttributeNode(nname); */
     /*n3.removeAttributeNode(nname);*/
@@ -137,7 +149,6 @@ function lkritisk() {
 }
 
 n3.addEventListener("click", lkritisk);
-
 
 
 function oversigt() {
@@ -191,10 +202,10 @@ for (let i = 0; i < osarr.length; i++) {
     oversigt.appendChild(div);                      /*div bliver sat som child element af div med id'et oversigt*/
 
 
-        if (flatArr[4] === 1) {
+        if (flatArr[5] === 1) {
             ndiv.style.backgroundColor ="#ff2d2d";
             
-        } else if (flatArr[4] === 2){
+        } else if (flatArr[5] === 2){
             ndiv.style.backgroundColor = "#FFE135";
         } else {
             ndiv.style.backgroundColor ="#25cb55";
@@ -270,6 +281,8 @@ function skift5() {
         alert("Du mangler at udfylde dit telefonnummer");
         return false;
     } else {
+        
+        createCookie('fejlmelding', json_str, 10000000);
         pushOps3();
         oversigt();
         $("dineOps").style.display = "none";
@@ -285,8 +298,6 @@ btnOps.addEventListener("click", skift5);
 
 
 
-
 export {btnTilbage};
 
 //Cookies
-createCookie(username, counter, 10000000);
