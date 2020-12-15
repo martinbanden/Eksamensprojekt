@@ -7,6 +7,8 @@ const init = function () {
 
     $("startBox").style.display = "block";
 
+    $("oversigt").style.display = "none";
+
     $("nyFejl").style.display = "none"; //Vi bruger none til at fjerne de inaktive div'er
 
     $("beskrivProb").style.display = "none";
@@ -20,4 +22,3 @@ const init = function () {
 
 window.addEventListener('load', init); 
 
-btnTilbage.addEventListener("click", init);

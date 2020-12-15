@@ -89,6 +89,7 @@ datarr = [];
     let n1 = $("n1");
     let n2 = $("n2");
     let n3 = $("n3");
+    let niveau = 0;
 
     let input1 = $("n1s");
     let input2 = $("n2s");
@@ -102,14 +103,16 @@ function mkritisk() {
     n1.style.opacity = "1.0";
     n2.style.opacity = ".5";
     n3.style.opacity = ".5";
-    let niveau = 1;
-    datarr.push(niveau);
-    
-    /*n2.removeAttributeNode(nname); */
-    /*n3.removeAttributeNode(nname); */
+
+    if (niveau === 2) {
+    input2.removeAttributeNode(nname);
+    } else if ( niveau === 3) {
+    input3.removeAttributeNode(nname); 
+    }  
+
+    niveau = 1;
     input1.setAttributeNode(nname);
-    n1.appendChild(input1);
-    
+
     
 }
 
@@ -120,13 +123,16 @@ function kritisk() {
     n2.style.opacity = "1.0";
     n3.style.opacity = ".5";
     n1.style.opacity = ".5";
-    let niveau = 2;
     
+    if (niveau === 1) {
+    input1.removeAttributeNode(nname);
+    } else if ( niveau === 3) {
+    input3.removeAttributeNode(nname); 
+    }  
 
-    /*n1.removeAttributeNode(nname); */
-    /*n3.removeAttributeNode(nname);*/
+    niveau = 2;
     input2.setAttributeNode(nname);
-    n2.appendChild(input); 
+ 
     
 
 }
@@ -138,13 +144,15 @@ function lkritisk() {
     n3.style.opacity = "1.0";
     n1.style.opacity = ".5"; 
     n2.style.opacity = ".5";
-    let niveau = 3;
-    datarr.push(niveau);
 
-    /*n1.removeAttributeNode(nname); */
-    /*n2.removeAttributeNode(nname);*/
+    if (niveau === 1) {
+    input1.removeAttributeNode(nname);
+    } else if ( niveau === 2) {
+    input2.removeAttributeNode(nname); 
+    }  
+    niveau = 3;
     input3.setAttributeNode(nname);
-    n3.appendChild(input); 
+
     
 }
 
@@ -167,37 +175,38 @@ for (let i = 0; i < osarr.length; i++) {
     div.setAttribute("id", "os" + i);               /*vi sætter et id som bruger i variablen fra løkken så
                                                     at der er specifikt for hvert div*/                         
     let att = document.createAttribute("class");    /* Laver en ny attribute*/
-    let att1 = document.createAttribute("class");
     
     div.appendChild(ndiv); 
     ndiv.style.borderRadius = "200px"; 
     ndiv.style.width = "60px";
     ndiv.style.height = "60px";
-    ndiv.style.display = "inline-block";
+    ndiv.style.display = "block";
+    ndiv.style.float = "left";
+
+
 
     div.appendChild(p);
     p.innerHTML = flatArr[2] + "<br>" + flatArr[3] + "<br>" + flatArr[4]; /*udskriver fra array*/ 
     p.style.width = "auto";                        /*styling på p*/
-    p.style.display = "inline-block";
+    p.style.display = "flex";
     p.style.textAlign = "left";
-    p.style.marginLeft = "10px";
     p.style.lineHeight = "25px";
     p.style.fontSize = "15px";
+    p.style.paddingLeft ="20px"
 
     att.value = "fejl";                             /*class bliver navngivet "fejl"*/
     div.setAttributeNode(att);
                   
     div.style.backgroundColor = "white";  /* styling på de diver der kommer */
     div.style.borderRadius = "200px";
-    div.style.padding = "10px 12px";
+    div.style.padding = "15px 20px";
     div.style.marginTop = "30px";
     div.style.marginLeft = "10px";
     div.style.marginRight = "10px";
     div.style.boxShadow = "0 10px 6px 0 rgba(0, 0, 0, 0.664)";
                                                   /*div får tilskrevet class="fejl"*/
 
-    att1.value = "prio";
-    ndiv.setAttributeNode(att1);
+
     
     oversigt.appendChild(div);                      /*div bliver sat som child element af div med id'et oversigt*/
 
@@ -262,6 +271,7 @@ function skift4() {
         alert("Du mangler at beskrive problemet");
         return false;
     } else {
+        datarr.push(niveau);
         pushOps2();
         $("beskrivProb").style.display = "none";
         $("dineOps").style.display = "block";
@@ -295,9 +305,12 @@ function skift5() {
 
 btnOps.addEventListener("click", skift5);
 
+function tilbage() {
+$("startBox").style.display = "block";
+$("oversigt").style.display = "block";
+$("takAfsendt").style.display = "none";
+}
 
-
-
-export {btnTilbage};
+btnTilbage.addEventListener("click", tilbage);
 
 //Cookies

@@ -16,7 +16,7 @@
     <title>Tønder Festival</title>
 </head>
 <body id="app">
-    <div id="greyBox">
+    
     <main>
         <form action="mail_handler.php" method="POST">
         <div id="textWrapper">
@@ -28,8 +28,10 @@
             <button type="button" id="btnStart">Start fejlmelding</button> 
             <br>
             <br>
-            <h1 name="" id="">Mine fejlmeldinger</h1>
-            <div id="oversigt"></div>
+            
+            <div id="oversigt">
+            <h1>Mine fejlmeldinger</h1>
+            </div>
             
     </div>
 
@@ -64,6 +66,7 @@
                             <br>    <p>Vælg kategori:</p>
                             <select name="cat" style="
                             border-radius: 100px; box-shadow: 0 10px 6px 0 rgba(0, 0, 0, 0.664); height: 40px;">
+                                    <option id="cat" value="Varelevering">Varelevering</option>
                                     <option id="cat" value="Elektronik">Elektronik</option>
                             </select>
                         <p>Vælg fejl:</p>
@@ -126,7 +129,9 @@
         </form>    
                 
         </main>
+    <div id="greyBox">
     </div>
+
 </body>
 <script type='module' src='execution.js'></script>
 
