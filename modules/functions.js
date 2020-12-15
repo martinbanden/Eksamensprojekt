@@ -5,11 +5,13 @@ import {$, createCookie, readCookie, eraseCookie} from "http://localhost/webdev/
 
 
 
-let datarr = [];    
-let osarr = [];
+let datarr = [];    /*array som optager værdier fra input felterne*/
+let osarr = [];     /*array som  opsnapper værdierne fra datarr sådan at det kan bliver tømt
+                    for at kunne tage værdierne fra den næste fejlmelding*/
 
-/*if (fejlmelding > 0 ) {
-readCookie(fejlmelding);
+/* readcookie som ikke virkede
+if (fejlmelding > 0 ) {
+readCookie(fejlmelding);               
 let obj = JSON.parse(fejlmelding);
 osarr = obj;
 }     
@@ -29,7 +31,8 @@ let json_str;
 function getLocation() {
 
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(initMap);
+    navigator.geolocation.getCurrentPosition(initMap); /*navigator.galocation er det objekt hvor information om enhends placering er lagret
+                                                        getCurrentPosition() er den metode man bruge til at hente oplysningerne*/
   } else {
     coords.innerHTML = "Geolocation is not supported by this browser.";
   }
@@ -41,26 +44,27 @@ function initMap(position) {
 
   lat = position.coords.latitude;
   lng = position.coords.longitude;
-  let domTimestamp = position.timestamp;
-  date = new Date(domTimestamp);
+  let domTimestamp = position.timestamp;            /*HTML5 geolocation indeholder opså timestamp*/
+  date = new Date(domTimestamp);                    /*formateres efter lokal tid*/
 
 let map = $("map");
-let staticmap = document.createElement("IMG");
+let staticmap = document.createElement("IMG");      /*kortet loades som et .png billede*/
 staticmap.src = "https://www.mapquestapi.com/staticmap/v5/map?key=3ZDz50uvowZWQbX1k3NprLeq47XcdtCl&locations="+ lat +","+ lng +"&center="+ lat +","+ lng +"&size="+ realwidth +","+ realheight +"&zoom=18&type=map&@2x";
+        /*API kald til Mapquest indeholdende infomation om hvor kortet skal centreres samt en pin på brugerens placering*/
 map.appendChild(staticmap);
 }
 
 function sendCoords() {
 
-let coordSet = `${lat} , ${lng}`; /*koordinaterne bliver sendt videre som en string*/
-coords.value = coordSet;            
-datarr.push(coordSet);
+let coordSet = `${lat} , ${lng}`;                   /*koordinaterne bliver sendt videre som en string*/
+coords.value = coordSet;                            /*string bliver sat ind som værdi i input feltet til koordinater*/
+datarr.push(coordSet);                              /*koordinater og timestamp stubbes i array*/
 datarr.push(date);             
 }
 
 
 function pushOps1() {
-    let area = $("area").value;
+    let area = $("area").value;                     /*der hentes flere værdier fra input felter der skubbes ind i array*/
     let cat = $("cat").value;
     let error = $("error").value;
 datarr.push(area);
@@ -70,20 +74,20 @@ console.log(datarr);
 }
 
 function pushOps2() {
-let text = $("tekst").value;
+let text = $("tekst").value;                        /*igen igen*/
 datarr.push(text);
 console.log(datarr);
 }
 
 function pushOps3() {
-    let navn = $("navn").value;
+    let navn = $("navn").value;                     /*og igen*/
     let tlf = $("tlf").value;
 datarr.push(navn);
 datarr.push(tlf);
-osarr.push(datarr);
-json_str = JSON.stringify(osarr);
+osarr.push(datarr);                                 /*her skubbes så de opsamlede data ind i det andet array*/
+json_str = JSON.stringify(osarr);                   /*Vi laver her vores array om til en JSON string så de er klar til at ligges i en cookie*/
 console.log(datarr);
-datarr = [];
+datarr = [];                                         /*og her nulstiller vi så array til opsamling så det er klar til ny data*/
 }
 
     let n1 = $("n1");
@@ -95,12 +99,12 @@ datarr = [];
     let input2 = $("n2s");
     let input3 = $("n3s");
 
-    let nname = document.createAttribute("name");
-    nname.value = "n1";
+    let nname = document.createAttribute("name");   /*vi laver en ny name attribute og giver den værdien n1*/
+    nname.value = "n1";                             
 
 
 function mkritisk() {
-    n1.style.opacity = "1.0";
+    n1.style.opacity = "1.0";                       /*style opacity bliver sat i forhold til hvilken niveus knap er trykket*/
     n2.style.opacity = ".5";
     n3.style.opacity = ".5";
 
@@ -111,9 +115,12 @@ function mkritisk() {
     }  
 
     niveau = 1;
-    input1.setAttributeNode(nname);
-
-    
+    input1.setAttributeNode(nname);                 /*setAttributeNode sætter  name=n1 på det input ID som  svare til den knap der er 
+                                                    trykket på. Den foregående if sætning fjerner den fra de andre igen hvis en 
+                                                    anden knap har været trykket*/
+                                                    /*name= n1 har betydning for hvilket input der bliver sendt via PHP*/
+                                                    /*Der er input elementer i HTML som skygger knapperne*/
+                
 }
 
 n1.addEventListener("click", mkritisk);
@@ -161,20 +168,21 @@ n3.addEventListener("click", lkritisk);
 
 function oversigt() {
 let oversigt = $("oversigt");
-let div = document.createElement("div");
-let ndiv = document.createElement("div");             
+let div = document.createElement("div");            /*der laves nye elementer til oversigten*/
+let ndiv = document.createElement("div");             /*til at angive hvilket niveau fejlen er */
 let p = document.createElement("p");
 
 div.innerHTML = "";                                 /*for løkken udskriver alt hvad der er i array så for at undgå
                                                     dobbelt udskrivning nulstiller vi div'et*/
 
 for (let i = 0; i < osarr.length; i++) {
-    let flatArr = osarr[i];
+    let flatArr = osarr[i];                         /*osarr er et array med et andet array indeni
+                                                    for nemmere at bruge data fra array gør vi strukturen flad*/
 
           
-    div.setAttribute("id", "os" + i);               /*vi sætter et id som bruger i variablen fra løkken så
+    div.setAttribute("id", "os" + i);               /*vi sætter et id som bruges i variablen fra løkken så
                                                     at der er specifikt for hvert div*/                         
-    let att = document.createAttribute("class");    /* Laver en ny attribute*/
+
     
     div.appendChild(ndiv); 
     ndiv.style.borderRadius = "200px"; 
@@ -194,25 +202,17 @@ for (let i = 0; i < osarr.length; i++) {
     p.style.fontSize = "15px";
     p.style.paddingLeft ="20px"
 
-    att.value = "fejl";                             /*class bliver navngivet "fejl"*/
-    div.setAttributeNode(att);
-                  
-    div.style.backgroundColor = "white";  /* styling på de diver der kommer */
+    oversigt.appendChild(div);                      /*div bliver sat som child element af div med id'et oversigt*/
+    div.style.backgroundColor = "white";            /* styling på de diver der kommer */
     div.style.borderRadius = "200px";
     div.style.padding = "15px 20px";
     div.style.marginTop = "30px";
     div.style.marginLeft = "10px";
     div.style.marginRight = "10px";
     div.style.boxShadow = "0 10px 6px 0 rgba(0, 0, 0, 0.664)";
-                                                  /*div får tilskrevet class="fejl"*/
 
-
-    
-    oversigt.appendChild(div);                      /*div bliver sat som child element af div med id'et oversigt*/
-
-
-        if (flatArr[5] === 1) {
-            ndiv.style.backgroundColor ="#ff2d2d";
+        if (flatArr[5] === 1) {                     /*if sætninger som angiver farve på niveau div*/
+            ndiv.style.backgroundColor ="#ff2d2d";  
             
         } else if (flatArr[5] === 2){
             ndiv.style.backgroundColor = "#FFE135";
