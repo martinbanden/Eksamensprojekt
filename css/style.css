@@ -199,6 +199,16 @@ input {
   height: 95vh;
 }
 
+#greyBox {
+  background: grey;
+  max-width: 100%;
+  padding: 5%;
+  border-top-right-radius: 35px;
+  border-top-left-radius: 35px;
+  height: 50%;
+  bottom: 0;
+}
+
 #textWrapper {
   background-color: whitesmoke;
   border-radius: 35px;
